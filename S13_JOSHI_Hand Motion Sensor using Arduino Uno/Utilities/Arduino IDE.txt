@@ -1,0 +1,26 @@
+Description:
+============
+The open-source Arduino environment makes it easy to write code and upload it to the i/o board. It runs on Windows, Mac OS X, and Linux. The environment is written in Java and based on Processing, avr-gcc, and other open source software.
+
+Download Link:
+==============
+http://arduino.cc/en/Main/Software
+
+Purpose:
+========
+Used to write code for the Arduino board in C like implementation.
+Arduino reference sheet is provided in the Datasheet folder.
+The Reference sheet provides list of inbuilt functions designed for the Arduino.
+
+Refrerence Page Link:
+=====================
+http://arduino.cc/en/Reference/HomePage
+
+Version Used(for my project):
+=============================
+1.0.4
+
+
+Application Size:
+=================
+91.4MB

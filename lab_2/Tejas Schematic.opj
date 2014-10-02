@@ -1,0 +1,124 @@
+(ExpressProject "basic"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\basic.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x"))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (GND
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (VCC
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (74LS374
+      (FullPartName "74LS374.Normal")
+      (LibraryName "Z:\WIN7FOLDERS\DOCUMENTS\ORCAD\LIBRARY2.OLB")
+      (DeviceIndex "0"))
+    (LED
+      (FullPartName "LED.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    (Resistor
+      (FullPartName "Resistor.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    ("PNP BCE"
+      (FullPartName "PNP BCE.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    ("TI BQ4011 NV-SRAM"
+      (FullPartName "TI BQ4011 NV-SRAM.Normal")
+      (LibraryName "C:\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (VCC_CIRCLE
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 9"
+      (FullPartName "HEADER 9.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("CONNECTOR DB9"
+      (FullPartName "CONNECTOR DB9.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (PORTRIGHT-L
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (74LS373
+      (FullPartName "74LS373.Normal")
+      (LibraryName "C:\DOCUMENTS AND SETTINGS\ALSAIF\DESKTOP\TTL.OLB")
+      (DeviceIndex "0"))
+    ("Resistor SIP"
+      (FullPartName "Resistor SIP.Normal")
+      (LibraryName
+         "C:\DOCUMENTS AND SETTINGS\CHMA1545\DESKTOP\ESDLIB\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    ("RESISTOR DIP 10 A-J"
+      (FullPartName "RESISTOR DIP 10 A-J.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (PORTLEFT-R
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (ATF16LV8C
+      (FullPartName "ATF16LV8C.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCADLITE\CAPTURE\LIBRARY\PLD.OLB")
+      (DeviceIndex "0"))
+    (MAX232
+      (FullPartName "MAX232.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB2.OLB")
+      (DeviceIndex "0"))
+    (MSM27C256
+      (FullPartName "MSM27C256.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PROM.OLB")
+      (DeviceIndex "0"))
+    ("Port out"
+      (FullPartName "Port out.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB2.OLB")
+      (DeviceIndex "0"))
+    ("Port in"
+      (FullPartName "Port in.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB2.OLB")
+      (DeviceIndex "0"))
+    (8051
+      (FullPartName "8051.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB2.OLB")
+      (DeviceIndex "0"))
+    (Crystal
+      (FullPartName "Crystal.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    ("Capacitor Polarized"
+      (FullPartName "Capacitor Polarized.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    (Diode
+      (FullPartName "Diode.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    ("SPPB Switch"
+      (FullPartName "SPPB Switch.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "Z:\win7folders\Documents\Orcad\basic.dsn")
+      (Path "Design Resources" "Z:\win7folders\Documents\Orcad\basic.dsn"
+         "SCHEMATIC1")
+      (Select "Design Resources" "Z:\win7folders\Documents\Orcad\basic.dsn"
+         "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 0 458 -4 -30 0 640 0 994"))
+      (Tab 0)))
+  (LastUsedLibraryBrowseDirectory "Z:\win7folders\Documents\Orcad"))

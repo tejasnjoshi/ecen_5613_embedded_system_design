@@ -1,0 +1,23 @@
+Name     LAB4;
+PartNo   001;
+Date     3/25/2013;
+Revision 01;
+Designer Engineer;
+Company  University Of Colorado Boulder;
+Assembly None;
+Location None;
+Device   g16v8a;
+
+
+ORDER: A12, A13, A14, A15, RD_AL, WR_AL, PSEN_AL, E, CLK; 
+
+
+VECTORS:
+0000000**
+1111000**
+0000100**
+1111101**
+0000011**
+1111011**
+0000110**
+1111110**

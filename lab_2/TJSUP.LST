@@ -1,0 +1,35 @@
+DUNFIELD 8051 ASSEMBLER: TJsup                                        PAGE: 1
+
+0000                         1  	ORG	$0000
+0000  02 00 40               2  	LJMP	MAIN
+0003                         3  
+0003                         4  
+0040                         5  	ORG	$0040	
+0040  75 89 01               6  MAIN	MOV	TMOD,#01H	; SET TIMER 0 TO MODE 1
+0043  79 00                  7  	MOV	R1,#000H	; INITIALIZE R1 TO 00H
+0045  78 80                  8  	MOV	R0,#080H	; INITIALIZE R0 TO 80H
+0047  90 00 00               9  	MOV	DPTR,#0H	; INITIALIZE DPTR TO 0000H	
+004A  75 8C 5F              10  D2	MOV	TH0,#05FH	; LOAD TIMER0 (HI8) WITH 00H
+004D  75 8A FF              11  	MOV	TL0,#0FFH	; LOAD TIMER0 (LO8) WITH 00H
+0050  75 A8 82              12  	MOV	IE,#082H	; SET THE INTERUUPT MASK BITS
+0053  E9                    13  	MOV	A,R1		; MOVE DATA FROM R1
+0054  F0                    14  	MOVX	[DPTR],A	; WRITE DATA TO EXTERNAL MEMORY
+0055  09                    15  	INC	R1		; INCREMENT R1( 00h -7Fh)
+0056  E9                    16  	MOV	A,R1		; CHEKCK IF 
+0057  94 7E                 17  	SUBB	A,#7EH		; COUNT HAS REACHED 7F
+0059  70 04                 18  	JNZ	D3		; IF R1==7F THEN
+005B  79 FF                 19  	MOV	R1,#0FFH	; RELOAD R1 WITH 00
+005D  78 7F                 20  	MOV 	R0,#07FH
+005F  D2 8C                 21  D3	SETB	TCON.4		; START TIMER	
+0061  30 8D FD              22  	JNB	TCON.5,$	; LOOP HERE
+0064  80 E4                 23  	SJMP	D2		; INFINITE LOOP
+0066                        24  
+0066                        25  
+0066                        26  
+000B                        27  	ORG	$000B
+000B  75 A8 00              28  ISR	MOV	IE,#00H		; SET INTERRUPT MASK REGISTER
+000E  75 88 00              29  	MOV	TCON,#00H	; SET TCON REGISTERS
+0011  E8                    30  	MOV	A,R0		; LOAD TO A FOR WRITING
+0012  F0                    31  	MOVX	[DPTR],A	; WRITING DATA TO EXTERNAL MEMORY
+0013  08                    32  	INC	R0		; INCREMENT R0 (80h-FFh)
+0014  32                    33  	RETI

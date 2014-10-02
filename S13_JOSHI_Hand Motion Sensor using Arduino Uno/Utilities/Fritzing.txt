@@ -1,0 +1,25 @@
+Description from website:
+=========================
+Fritzing is an open-source hardware initiative to support designers, artists, researchers and hobbyists to work creatively with interactive electronics. We are creating a software tool, a community website and services in the spirit of Processing and Arduino, fostering an ecosystem that allows users to document their prototypes, share them with others, teach electronics in a classroom, and layout and manufacture professional pcbs.
+
+Main Website:
+=============
+http://fritzing.org/
+
+Software Download Link:
+=======================
+http://fritzing.org/download/
+
+Purpose:
+========
+Used to generate the Layout and Circuit diagram for the Arduino Circuit
+
+Version:
+========
+0.7.12
+
+
+
+Application Size:
+=================
+21.7MB

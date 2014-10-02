@@ -1,0 +1,28 @@
+%SIGNAL
+PIN   2 =  A12 
+PIN   3 =  A13 
+PIN   5 =  A14 
+PIN   6 =  A15 
+PIN  14 =  CLK 
+PIN  13 =  E 
+PIN   7 =  PSEN_AL 
+PIN   8 =  RD_AL 
+PIN   4 =  WR_AL 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+A =>
+    !WR_AL
+  # !RD_AL
+
+CLK =>
+    !A15 & WR_AL
+
+E =>
+    A12 & A13 & A14 & A15 & !WR_AL
+  # A12 & A13 & A14 & A15 & !RD_AL
+
+%END

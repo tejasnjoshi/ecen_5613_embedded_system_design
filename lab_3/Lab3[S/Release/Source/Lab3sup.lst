@@ -1,0 +1,2403 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.6.0 #4309 (Jul 28 2006)
+                              4 ; This file generated Sun Mar 24 16:54:27 2013
+                              5 ;--------------------------------------------------------
+                              6 	.module ___Source_Lab3sup
+                              7 	.optsdcc -mmcs51 --model-large
+                              8 	
+                              9 ;--------------------------------------------------------
+                             10 ; Public variables in this module
+                             11 ;--------------------------------------------------------
+                             12 	.globl _isr_one
+                             13 	.globl _main
+                             14 	.globl __sdcc_external_startup
+                             15 	.globl _TF1
+                             16 	.globl _TR1
+                             17 	.globl _TF0
+                             18 	.globl _TR0
+                             19 	.globl _IE1
+                             20 	.globl _IT1
+                             21 	.globl _IE0
+                             22 	.globl _IT0
+                             23 	.globl _SM0
+                             24 	.globl _SM1
+                             25 	.globl _SM2
+                             26 	.globl _REN
+                             27 	.globl _TB8
+                             28 	.globl _RB8
+                             29 	.globl _TI
+                             30 	.globl _RI
+                             31 	.globl _CY
+                             32 	.globl _AC
+                             33 	.globl _F0
+                             34 	.globl _RS1
+                             35 	.globl _RS0
+                             36 	.globl _OV
+                             37 	.globl _F1
+                             38 	.globl _P
+                             39 	.globl _RD
+                             40 	.globl _WR
+                             41 	.globl _T1
+                             42 	.globl _T0
+                             43 	.globl _INT1
+                             44 	.globl _INT0
+                             45 	.globl _TXD0
+                             46 	.globl _TXD
+                             47 	.globl _RXD0
+                             48 	.globl _RXD
+                             49 	.globl _P3_7
+                             50 	.globl _P3_6
+                             51 	.globl _P3_5
+                             52 	.globl _P3_4
+                             53 	.globl _P3_3
+                             54 	.globl _P3_2
+                             55 	.globl _P3_1
+                             56 	.globl _P3_0
+                             57 	.globl _P2_7
+                             58 	.globl _P2_6
+                             59 	.globl _P2_5
+                             60 	.globl _P2_4
+                             61 	.globl _P2_3
+                             62 	.globl _P2_2
+                             63 	.globl _P2_1
+                             64 	.globl _P2_0
+                             65 	.globl _P1_7
+                             66 	.globl _P1_6
+                             67 	.globl _P1_5
+                             68 	.globl _P1_4
+                             69 	.globl _P1_3
+                             70 	.globl _P1_2
+                             71 	.globl _P1_1
+                             72 	.globl _P1_0
+                             73 	.globl _P0_7
+                             74 	.globl _P0_6
+                             75 	.globl _P0_5
+                             76 	.globl _P0_4
+                             77 	.globl _P0_3
+                             78 	.globl _P0_2
+                             79 	.globl _P0_1
+                             80 	.globl _P0_0
+                             81 	.globl _PS
+                             82 	.globl _PT1
+                             83 	.globl _PX1
+                             84 	.globl _PT0
+                             85 	.globl _PX0
+                             86 	.globl _EA
+                             87 	.globl _ES
+                             88 	.globl _ET1
+                             89 	.globl _EX1
+                             90 	.globl _ET0
+                             91 	.globl _EX0
+                             92 	.globl _BREG_F7
+                             93 	.globl _BREG_F6
+                             94 	.globl _BREG_F5
+                             95 	.globl _BREG_F4
+                             96 	.globl _BREG_F3
+                             97 	.globl _BREG_F2
+                             98 	.globl _BREG_F1
+                             99 	.globl _BREG_F0
+                            100 	.globl _P5_7
+                            101 	.globl _P5_6
+                            102 	.globl _P5_5
+                            103 	.globl _P5_4
+                            104 	.globl _P5_3
+                            105 	.globl _P5_2
+                            106 	.globl _P5_1
+                            107 	.globl _P5_0
+                            108 	.globl _P4_7
+                            109 	.globl _P4_6
+                            110 	.globl _P4_5
+                            111 	.globl _P4_4
+                            112 	.globl _P4_3
+                            113 	.globl _P4_2
+                            114 	.globl _P4_1
+                            115 	.globl _P4_0
+                            116 	.globl _PX0L
+                            117 	.globl _PT0L
+                            118 	.globl _PX1L
+                            119 	.globl _PT1L
+                            120 	.globl _PLS
+                            121 	.globl _PT2L
+                            122 	.globl _PPCL
+                            123 	.globl _EC
+                            124 	.globl _CCF0
+                            125 	.globl _CCF1
+                            126 	.globl _CCF2
+                            127 	.globl _CCF3
+                            128 	.globl _CCF4
+                            129 	.globl _CR
+                            130 	.globl _CF
+                            131 	.globl _TF2
+                            132 	.globl _EXF2
+                            133 	.globl _RCLK
+                            134 	.globl _TCLK
+                            135 	.globl _EXEN2
+                            136 	.globl _TR2
+                            137 	.globl _C_T2
+                            138 	.globl _CP_RL2
+                            139 	.globl _T2CON_7
+                            140 	.globl _T2CON_6
+                            141 	.globl _T2CON_5
+                            142 	.globl _T2CON_4
+                            143 	.globl _T2CON_3
+                            144 	.globl _T2CON_2
+                            145 	.globl _T2CON_1
+                            146 	.globl _T2CON_0
+                            147 	.globl _PT2
+                            148 	.globl _ET2
+                            149 	.globl _TMOD
+                            150 	.globl _TL1
+                            151 	.globl _TL0
+                            152 	.globl _TH1
+                            153 	.globl _TH0
+                            154 	.globl _TCON
+                            155 	.globl _SP
+                            156 	.globl _SCON
+                            157 	.globl _SBUF0
+                            158 	.globl _SBUF
+                            159 	.globl _PSW
+                            160 	.globl _PCON
+                            161 	.globl _P3
+                            162 	.globl _P2
+                            163 	.globl _P1
+                            164 	.globl _P0
+                            165 	.globl _IP
+                            166 	.globl _IE
+                            167 	.globl _DP0L
+                            168 	.globl _DPL
+                            169 	.globl _DP0H
+                            170 	.globl _DPH
+                            171 	.globl _B
+                            172 	.globl _ACC
+                            173 	.globl _EECON
+                            174 	.globl _KBF
+                            175 	.globl _KBE
+                            176 	.globl _KBLS
+                            177 	.globl _BRL
+                            178 	.globl _BDRCON
+                            179 	.globl _T2MOD
+                            180 	.globl _SPDAT
+                            181 	.globl _SPSTA
+                            182 	.globl _SPCON
+                            183 	.globl _SADEN
+                            184 	.globl _SADDR
+                            185 	.globl _WDTPRG
+                            186 	.globl _WDTRST
+                            187 	.globl _P5
+                            188 	.globl _P4
+                            189 	.globl _IPH1
+                            190 	.globl _IPL1
+                            191 	.globl _IPH0
+                            192 	.globl _IPL0
+                            193 	.globl _IEN1
+                            194 	.globl _IEN0
+                            195 	.globl _CMOD
+                            196 	.globl _CL
+                            197 	.globl _CH
+                            198 	.globl _CCON
+                            199 	.globl _CCAPM4
+                            200 	.globl _CCAPM3
+                            201 	.globl _CCAPM2
+                            202 	.globl _CCAPM1
+                            203 	.globl _CCAPM0
+                            204 	.globl _CCAP4L
+                            205 	.globl _CCAP3L
+                            206 	.globl _CCAP2L
+                            207 	.globl _CCAP1L
+                            208 	.globl _CCAP0L
+                            209 	.globl _CCAP4H
+                            210 	.globl _CCAP3H
+                            211 	.globl _CCAP2H
+                            212 	.globl _CCAP1H
+                            213 	.globl _CCAP0H
+                            214 	.globl _CKCKON1
+                            215 	.globl _CKCKON0
+                            216 	.globl _CKRL
+                            217 	.globl _AUXR1
+                            218 	.globl _AUXR
+                            219 	.globl _TH2
+                            220 	.globl _TL2
+                            221 	.globl _RCAP2H
+                            222 	.globl _RCAP2L
+                            223 	.globl _T2CON
+                            224 	.globl _timer0
+                            225 	.globl _counter_bit
+                            226 	.globl _pwm_run
+                            227 	.globl _counter_run
+                            228 	.globl _counter0_count
+                            229 	.globl _selection
+                            230 	.globl _select
+                            231 	.globl _putstr
+                            232 	.globl _putchar
+                            233 	.globl _getchar
+                            234 ;--------------------------------------------------------
+                            235 ; special function registers
+                            236 ;--------------------------------------------------------
+                            237 	.area RSEG    (DATA)
+                    00C8    238 _T2CON	=	0x00c8
+                    00CA    239 _RCAP2L	=	0x00ca
+                    00CB    240 _RCAP2H	=	0x00cb
+                    00CC    241 _TL2	=	0x00cc
+                    00CD    242 _TH2	=	0x00cd
+                    008E    243 _AUXR	=	0x008e
+                    00A2    244 _AUXR1	=	0x00a2
+                    0097    245 _CKRL	=	0x0097
+                    008F    246 _CKCKON0	=	0x008f
+                    008F    247 _CKCKON1	=	0x008f
+                    00FA    248 _CCAP0H	=	0x00fa
+                    00FB    249 _CCAP1H	=	0x00fb
+                    00FC    250 _CCAP2H	=	0x00fc
+                    00FD    251 _CCAP3H	=	0x00fd
+                    00FE    252 _CCAP4H	=	0x00fe
+                    00EA    253 _CCAP0L	=	0x00ea
+                    00EB    254 _CCAP1L	=	0x00eb
+                    00EC    255 _CCAP2L	=	0x00ec
+                    00ED    256 _CCAP3L	=	0x00ed
+                    00EE    257 _CCAP4L	=	0x00ee
+                    00DA    258 _CCAPM0	=	0x00da
+                    00DB    259 _CCAPM1	=	0x00db
+                    00DC    260 _CCAPM2	=	0x00dc
+                    00DD    261 _CCAPM3	=	0x00dd
+                    00DE    262 _CCAPM4	=	0x00de
+                    00D8    263 _CCON	=	0x00d8
+                    00F9    264 _CH	=	0x00f9
+                    00E9    265 _CL	=	0x00e9
+                    00D9    266 _CMOD	=	0x00d9
+                    00A8    267 _IEN0	=	0x00a8
+                    00B1    268 _IEN1	=	0x00b1
+                    00B8    269 _IPL0	=	0x00b8
+                    00B7    270 _IPH0	=	0x00b7
+                    00B2    271 _IPL1	=	0x00b2
+                    00B3    272 _IPH1	=	0x00b3
+                    00C0    273 _P4	=	0x00c0
+                    00D8    274 _P5	=	0x00d8
+                    00A6    275 _WDTRST	=	0x00a6
+                    00A7    276 _WDTPRG	=	0x00a7
+                    00A9    277 _SADDR	=	0x00a9
+                    00B9    278 _SADEN	=	0x00b9
+                    00C3    279 _SPCON	=	0x00c3
+                    00C4    280 _SPSTA	=	0x00c4
+                    00C5    281 _SPDAT	=	0x00c5
+                    00C9    282 _T2MOD	=	0x00c9
+                    009B    283 _BDRCON	=	0x009b
+                    009A    284 _BRL	=	0x009a
+                    009C    285 _KBLS	=	0x009c
+                    009D    286 _KBE	=	0x009d
+                    009E    287 _KBF	=	0x009e
+                    00D2    288 _EECON	=	0x00d2
+                    00E0    289 _ACC	=	0x00e0
+                    00F0    290 _B	=	0x00f0
+                    0083    291 _DPH	=	0x0083
+                    0083    292 _DP0H	=	0x0083
+                    0082    293 _DPL	=	0x0082
+                    0082    294 _DP0L	=	0x0082
+                    00A8    295 _IE	=	0x00a8
+                    00B8    296 _IP	=	0x00b8
+                    0080    297 _P0	=	0x0080
+                    0090    298 _P1	=	0x0090
+                    00A0    299 _P2	=	0x00a0
+                    00B0    300 _P3	=	0x00b0
+                    0087    301 _PCON	=	0x0087
+                    00D0    302 _PSW	=	0x00d0
+                    0099    303 _SBUF	=	0x0099
+                    0099    304 _SBUF0	=	0x0099
+                    0098    305 _SCON	=	0x0098
+                    0081    306 _SP	=	0x0081
+                    0088    307 _TCON	=	0x0088
+                    008C    308 _TH0	=	0x008c
+                    008D    309 _TH1	=	0x008d
+                    008A    310 _TL0	=	0x008a
+                    008B    311 _TL1	=	0x008b
+                    0089    312 _TMOD	=	0x0089
+                            313 ;--------------------------------------------------------
+                            314 ; special function bits
+                            315 ;--------------------------------------------------------
+                            316 	.area RSEG    (DATA)
+                    00AD    317 _ET2	=	0x00ad
+                    00BD    318 _PT2	=	0x00bd
+                    00C8    319 _T2CON_0	=	0x00c8
+                    00C9    320 _T2CON_1	=	0x00c9
+                    00CA    321 _T2CON_2	=	0x00ca
+                    00CB    322 _T2CON_3	=	0x00cb
+                    00CC    323 _T2CON_4	=	0x00cc
+                    00CD    324 _T2CON_5	=	0x00cd
+                    00CE    325 _T2CON_6	=	0x00ce
+                    00CF    326 _T2CON_7	=	0x00cf
+                    00C8    327 _CP_RL2	=	0x00c8
+                    00C9    328 _C_T2	=	0x00c9
+                    00CA    329 _TR2	=	0x00ca
+                    00CB    330 _EXEN2	=	0x00cb
+                    00CC    331 _TCLK	=	0x00cc
+                    00CD    332 _RCLK	=	0x00cd
+                    00CE    333 _EXF2	=	0x00ce
+                    00CF    334 _TF2	=	0x00cf
+                    00DF    335 _CF	=	0x00df
+                    00DE    336 _CR	=	0x00de
+                    00DC    337 _CCF4	=	0x00dc
+                    00DB    338 _CCF3	=	0x00db
+                    00DA    339 _CCF2	=	0x00da
+                    00D9    340 _CCF1	=	0x00d9
+                    00D8    341 _CCF0	=	0x00d8
+                    00AE    342 _EC	=	0x00ae
+                    00BE    343 _PPCL	=	0x00be
+                    00BD    344 _PT2L	=	0x00bd
+                    00BC    345 _PLS	=	0x00bc
+                    00BB    346 _PT1L	=	0x00bb
+                    00BA    347 _PX1L	=	0x00ba
+                    00B9    348 _PT0L	=	0x00b9
+                    00B8    349 _PX0L	=	0x00b8
+                    00C0    350 _P4_0	=	0x00c0
+                    00C1    351 _P4_1	=	0x00c1
+                    00C2    352 _P4_2	=	0x00c2
+                    00C3    353 _P4_3	=	0x00c3
+                    00C4    354 _P4_4	=	0x00c4
+                    00C5    355 _P4_5	=	0x00c5
+                    00C6    356 _P4_6	=	0x00c6
+                    00C7    357 _P4_7	=	0x00c7
+                    00D8    358 _P5_0	=	0x00d8
+                    00D9    359 _P5_1	=	0x00d9
+                    00DA    360 _P5_2	=	0x00da
+                    00DB    361 _P5_3	=	0x00db
+                    00DC    362 _P5_4	=	0x00dc
+                    00DD    363 _P5_5	=	0x00dd
+                    00DE    364 _P5_6	=	0x00de
+                    00DF    365 _P5_7	=	0x00df
+                    00F0    366 _BREG_F0	=	0x00f0
+                    00F1    367 _BREG_F1	=	0x00f1
+                    00F2    368 _BREG_F2	=	0x00f2
+                    00F3    369 _BREG_F3	=	0x00f3
+                    00F4    370 _BREG_F4	=	0x00f4
+                    00F5    371 _BREG_F5	=	0x00f5
+                    00F6    372 _BREG_F6	=	0x00f6
+                    00F7    373 _BREG_F7	=	0x00f7
+                    00A8    374 _EX0	=	0x00a8
+                    00A9    375 _ET0	=	0x00a9
+                    00AA    376 _EX1	=	0x00aa
+                    00AB    377 _ET1	=	0x00ab
+                    00AC    378 _ES	=	0x00ac
+                    00AF    379 _EA	=	0x00af
+                    00B8    380 _PX0	=	0x00b8
+                    00B9    381 _PT0	=	0x00b9
+                    00BA    382 _PX1	=	0x00ba
+                    00BB    383 _PT1	=	0x00bb
+                    00BC    384 _PS	=	0x00bc
+                    0080    385 _P0_0	=	0x0080
+                    0081    386 _P0_1	=	0x0081
+                    0082    387 _P0_2	=	0x0082
+                    0083    388 _P0_3	=	0x0083
+                    0084    389 _P0_4	=	0x0084
+                    0085    390 _P0_5	=	0x0085
+                    0086    391 _P0_6	=	0x0086
+                    0087    392 _P0_7	=	0x0087
+                    0090    393 _P1_0	=	0x0090
+                    0091    394 _P1_1	=	0x0091
+                    0092    395 _P1_2	=	0x0092
+                    0093    396 _P1_3	=	0x0093
+                    0094    397 _P1_4	=	0x0094
+                    0095    398 _P1_5	=	0x0095
+                    0096    399 _P1_6	=	0x0096
+                    0097    400 _P1_7	=	0x0097
+                    00A0    401 _P2_0	=	0x00a0
+                    00A1    402 _P2_1	=	0x00a1
+                    00A2    403 _P2_2	=	0x00a2
+                    00A3    404 _P2_3	=	0x00a3
+                    00A4    405 _P2_4	=	0x00a4
+                    00A5    406 _P2_5	=	0x00a5
+                    00A6    407 _P2_6	=	0x00a6
+                    00A7    408 _P2_7	=	0x00a7
+                    00B0    409 _P3_0	=	0x00b0
+                    00B1    410 _P3_1	=	0x00b1
+                    00B2    411 _P3_2	=	0x00b2
+                    00B3    412 _P3_3	=	0x00b3
+                    00B4    413 _P3_4	=	0x00b4
+                    00B5    414 _P3_5	=	0x00b5
+                    00B6    415 _P3_6	=	0x00b6
+                    00B7    416 _P3_7	=	0x00b7
+                    00B0    417 _RXD	=	0x00b0
+                    00B0    418 _RXD0	=	0x00b0
+                    00B1    419 _TXD	=	0x00b1
+                    00B1    420 _TXD0	=	0x00b1
+                    00B2    421 _INT0	=	0x00b2
+                    00B3    422 _INT1	=	0x00b3
+                    00B4    423 _T0	=	0x00b4
+                    00B5    424 _T1	=	0x00b5
+                    00B6    425 _WR	=	0x00b6
+                    00B7    426 _RD	=	0x00b7
+                    00D0    427 _P	=	0x00d0
+                    00D1    428 _F1	=	0x00d1
+                    00D2    429 _OV	=	0x00d2
+                    00D3    430 _RS0	=	0x00d3
+                    00D4    431 _RS1	=	0x00d4
+                    00D5    432 _F0	=	0x00d5
+                    00D6    433 _AC	=	0x00d6
+                    00D7    434 _CY	=	0x00d7
+                    0098    435 _RI	=	0x0098
+                    0099    436 _TI	=	0x0099
+                    009A    437 _RB8	=	0x009a
+                    009B    438 _TB8	=	0x009b
+                    009C    439 _REN	=	0x009c
+                    009D    440 _SM2	=	0x009d
+                    009E    441 _SM1	=	0x009e
+                    009F    442 _SM0	=	0x009f
+                    0088    443 _IT0	=	0x0088
+                    0089    444 _IE0	=	0x0089
+                    008A    445 _IT1	=	0x008a
+                    008B    446 _IE1	=	0x008b
+                    008C    447 _TR0	=	0x008c
+                    008D    448 _TF0	=	0x008d
+                    008E    449 _TR1	=	0x008e
+                    008F    450 _TF1	=	0x008f
+                            451 ;--------------------------------------------------------
+                            452 ; overlayable register banks
+                            453 ;--------------------------------------------------------
+                            454 	.area REG_BANK_0	(REL,OVR,DATA)
+   0000                     455 	.ds 8
+                            456 ;--------------------------------------------------------
+                            457 ; internal ram data
+                            458 ;--------------------------------------------------------
+                            459 	.area DSEG    (DATA)
+                            460 ;--------------------------------------------------------
+                            461 ; overlayable items in internal ram 
+                            462 ;--------------------------------------------------------
+                            463 	.area OSEG    (OVR,DATA)
+                            464 ;--------------------------------------------------------
+                            465 ; Stack segment in internal ram 
+                            466 ;--------------------------------------------------------
+                            467 	.area	SSEG	(DATA)
+   0000                     468 __start__stack:
+   0000                     469 	.ds	1
+                            470 
+                            471 ;--------------------------------------------------------
+                            472 ; indirectly addressable internal ram data
+                            473 ;--------------------------------------------------------
+                            474 	.area ISEG    (DATA)
+                            475 ;--------------------------------------------------------
+                            476 ; bit data
+                            477 ;--------------------------------------------------------
+                            478 	.area BSEG    (BIT)
+                            479 ;--------------------------------------------------------
+                            480 ; paged external ram data
+                            481 ;--------------------------------------------------------
+                            482 	.area PSEG    (PAG,XDATA)
+                            483 ;--------------------------------------------------------
+                            484 ; external ram data
+                            485 ;--------------------------------------------------------
+                            486 	.area XSEG    (XDATA)
+   0000                     487 _select::
+   0000                     488 	.ds 1
+   0001                     489 _selection::
+   0001                     490 	.ds 2
+   0003                     491 _counter0_count::
+   0003                     492 	.ds 2
+   0005                     493 _counter_run::
+   0005                     494 	.ds 2
+   0007                     495 _pwm_run::
+   0007                     496 	.ds 2
+   0009                     497 _counter_bit::
+   0009                     498 	.ds 2
+   000B                     499 _timer0::
+   000B                     500 	.ds 2
+   000D                     501 _putstr_s_1_1:
+   000D                     502 	.ds 3
+   0010                     503 _putchar_c_1_1:
+   0010                     504 	.ds 1
+                            505 ;--------------------------------------------------------
+                            506 ; external initialized ram data
+                            507 ;--------------------------------------------------------
+                            508 	.area XISEG   (XDATA)
+                            509 	.area HOME    (CODE)
+                            510 	.area GSINIT0 (CODE)
+                            511 	.area GSINIT1 (CODE)
+                            512 	.area GSINIT2 (CODE)
+                            513 	.area GSINIT3 (CODE)
+                            514 	.area GSINIT4 (CODE)
+                            515 	.area GSINIT5 (CODE)
+                            516 	.area GSINIT  (CODE)
+                            517 	.area GSFINAL (CODE)
+                            518 	.area CSEG    (CODE)
+                            519 ;--------------------------------------------------------
+                            520 ; interrupt vector 
+                            521 ;--------------------------------------------------------
+                            522 	.area HOME    (CODE)
+   0000                     523 __interrupt_vect:
+   0000 02s00r00            524 	ljmp	__sdcc_gsinit_startup
+   0003 32                  525 	reti
+   0004                     526 	.ds	7
+   000B 02s06r62            527 	ljmp	_isr_one
+                            528 ;--------------------------------------------------------
+                            529 ; global & static initialisations
+                            530 ;--------------------------------------------------------
+                            531 	.area HOME    (CODE)
+                            532 	.area GSINIT  (CODE)
+                            533 	.area GSFINAL (CODE)
+                            534 	.area GSINIT  (CODE)
+                            535 	.globl __sdcc_gsinit_startup
+                            536 	.globl __sdcc_program_startup
+                            537 	.globl __start__stack
+                            538 	.globl __mcs51_genXINIT
+                            539 	.globl __mcs51_genXRAMCLEAR
+                            540 	.globl __mcs51_genRAMCLEAR
+                            541 	.area GSFINAL (CODE)
+   0000 02s00r00            542 	ljmp	__sdcc_program_startup
+                            543 ;--------------------------------------------------------
+                            544 ; Home
+                            545 ;--------------------------------------------------------
+                            546 	.area HOME    (CODE)
+                            547 	.area CSEG    (CODE)
+   0000                     548 __sdcc_program_startup:
+   0000 12s00r09            549 	lcall	_main
+                            550 ;	return from main will lock up
+   0003 80 FE               551 	sjmp .
+                            552 ;--------------------------------------------------------
+                            553 ; code
+                            554 ;--------------------------------------------------------
+                            555 	.area CSEG    (CODE)
+                            556 ;------------------------------------------------------------
+                            557 ;Allocation info for local variables in function '_sdcc_external_startup'
+                            558 ;------------------------------------------------------------
+                            559 ;------------------------------------------------------------
+                            560 ;	../Source/Lab3sup.c:21: _sdcc_external_startup()		
+                            561 ;	-----------------------------------------
+                            562 ;	 function _sdcc_external_startup
+                            563 ;	-----------------------------------------
+   0005                     564 __sdcc_external_startup:
+                    0002    565 	ar2 = 0x02
+                    0003    566 	ar3 = 0x03
+                    0004    567 	ar4 = 0x04
+                    0005    568 	ar5 = 0x05
+                    0006    569 	ar6 = 0x06
+                    0007    570 	ar7 = 0x07
+                    0000    571 	ar0 = 0x00
+                    0001    572 	ar1 = 0x01
+                            573 ;	../Source/Lab3sup.c:24: return 0;			//the function must return 0
+                            574 ;	genRet
+                            575 ;	Peephole 182.b	used 16 bit load of dptr
+   0005 90 00 00            576 	mov	dptr,#0x0000
+                            577 ;	Peephole 300	removed redundant label 00101$
+   0008 22                  578 	ret
+                            579 ;------------------------------------------------------------
+                            580 ;Allocation info for local variables in function 'main'
+                            581 ;------------------------------------------------------------
+                            582 ;------------------------------------------------------------
+                            583 ;	../Source/Lab3sup.c:30: void main()
+                            584 ;	-----------------------------------------
+                            585 ;	 function main
+                            586 ;	-----------------------------------------
+   0009                     587 _main:
+                            588 ;	../Source/Lab3sup.c:32: counter_run,pwm_run=0;
+                            589 ;	genAssign
+   0009 90s00r07            590 	mov	dptr,#_pwm_run
+   000C E4                  591 	clr	a
+   000D F0                  592 	movx	@dptr,a
+   000E A3                  593 	inc	dptr
+   000F F0                  594 	movx	@dptr,a
+                            595 ;	../Source/Lab3sup.c:33: counter_bit=0;
+                            596 ;	genAssign
+   0010 90s00r09            597 	mov	dptr,#_counter_bit
+   0013 E4                  598 	clr	a
+   0014 F0                  599 	movx	@dptr,a
+   0015 A3                  600 	inc	dptr
+   0016 F0                  601 	movx	@dptr,a
+                            602 ;	../Source/Lab3sup.c:34: timer0=0;	
+                            603 ;	genAssign
+   0017 90s00r0B            604 	mov	dptr,#_timer0
+   001A E4                  605 	clr	a
+   001B F0                  606 	movx	@dptr,a
+   001C A3                  607 	inc	dptr
+   001D F0                  608 	movx	@dptr,a
+                            609 ;	../Source/Lab3sup.c:37: CMOD|=0x02;
+                            610 ;	genOr
+   001E 43 D9 02            611 	orl	_CMOD,#0x02
+                            612 ;	../Source/Lab3sup.c:39: CCAP0L = 0xF3;
+                            613 ;	genAssign
+   0021 75 EA F3            614 	mov	_CCAP0L,#0xF3
+                            615 ;	../Source/Lab3sup.c:40: CCAP0H = 0xF3;
+                            616 ;	genAssign
+   0024 75 FA F3            617 	mov	_CCAP0H,#0xF3
+                            618 ;	../Source/Lab3sup.c:42: CCAP1L= 0x66;
+                            619 ;	genAssign
+   0027 75 EB 66            620 	mov	_CCAP1L,#0x66
+                            621 ;	../Source/Lab3sup.c:43: CCAP1H= 0x66;
+                            622 ;	genAssign
+   002A 75 FB 66            623 	mov	_CCAP1H,#0x66
+                            624 ;	../Source/Lab3sup.c:45: TMOD|=0x05;
+                            625 ;	genOr
+   002D 43 89 05            626 	orl	_TMOD,#0x05
+                            627 ;	../Source/Lab3sup.c:47: printf ("\n\n\rWW      WW EEEEEEE LL       CCCCC   OOOOO  MM    MM EEEEEEE"); 
+                            628 ;	genIpush
+   0030 74r00               629 	mov	a,#__str_0
+   0032 C0 E0               630 	push	acc
+   0034 74s00               631 	mov	a,#(__str_0 >> 8)
+   0036 C0 E0               632 	push	acc
+   0038 74 80               633 	mov	a,#0x80
+   003A C0 E0               634 	push	acc
+                            635 ;	genCall
+   003C 12s00r00            636 	lcall	_printf
+   003F 15 81               637 	dec	sp
+   0041 15 81               638 	dec	sp
+   0043 15 81               639 	dec	sp
+                            640 ;	../Source/Lab3sup.c:48: printf ("\n\rWW      WW EE      LL      CC      OO   OO MMM  MMM EE     ");
+                            641 ;	genIpush
+   0045 74r3F               642 	mov	a,#__str_1
+   0047 C0 E0               643 	push	acc
+   0049 74s00               644 	mov	a,#(__str_1 >> 8)
+   004B C0 E0               645 	push	acc
+   004D 74 80               646 	mov	a,#0x80
+   004F C0 E0               647 	push	acc
+                            648 ;	genCall
+   0051 12s00r00            649 	lcall	_printf
+   0054 15 81               650 	dec	sp
+   0056 15 81               651 	dec	sp
+   0058 15 81               652 	dec	sp
+                            653 ;	../Source/Lab3sup.c:49: printf ("\n\rWW   W  WW EEEEE   LL      CC      OO   OO MM MM MM EEEEE  "); 
+                            654 ;	genIpush
+   005A 74r7D               655 	mov	a,#__str_2
+   005C C0 E0               656 	push	acc
+   005E 74s00               657 	mov	a,#(__str_2 >> 8)
+   0060 C0 E0               658 	push	acc
+   0062 74 80               659 	mov	a,#0x80
+   0064 C0 E0               660 	push	acc
+                            661 ;	genCall
+   0066 12s00r00            662 	lcall	_printf
+   0069 15 81               663 	dec	sp
+   006B 15 81               664 	dec	sp
+   006D 15 81               665 	dec	sp
+                            666 ;	../Source/Lab3sup.c:50: printf ("\n\r WW WWW WW EE      LL      CC      OO   OO MM    MM EE     "); 
+                            667 ;	genIpush
+   006F 74rBB               668 	mov	a,#__str_3
+   0071 C0 E0               669 	push	acc
+   0073 74s00               670 	mov	a,#(__str_3 >> 8)
+   0075 C0 E0               671 	push	acc
+   0077 74 80               672 	mov	a,#0x80
+   0079 C0 E0               673 	push	acc
+                            674 ;	genCall
+   007B 12s00r00            675 	lcall	_printf
+   007E 15 81               676 	dec	sp
+   0080 15 81               677 	dec	sp
+   0082 15 81               678 	dec	sp
+                            679 ;	../Source/Lab3sup.c:51: printf ("\n\r  WW   WW  EEEEEEE LLLLLLL  CCCCC   OOOO0  MM    MM EEEEEEE"); 
+                            680 ;	genIpush
+   0084 74rF9               681 	mov	a,#__str_4
+   0086 C0 E0               682 	push	acc
+   0088 74s00               683 	mov	a,#(__str_4 >> 8)
+   008A C0 E0               684 	push	acc
+   008C 74 80               685 	mov	a,#0x80
+   008E C0 E0               686 	push	acc
+                            687 ;	genCall
+   0090 12s00r00            688 	lcall	_printf
+   0093 15 81               689 	dec	sp
+   0095 15 81               690 	dec	sp
+   0097 15 81               691 	dec	sp
+                            692 ;	../Source/Lab3sup.c:53: while(1)
+   0099                     693 00131$:
+                            694 ;	../Source/Lab3sup.c:55: printf ("\n\n\rPlease make a selection:");
+                            695 ;	genIpush
+   0099 74r37               696 	mov	a,#__str_5
+   009B C0 E0               697 	push	acc
+   009D 74s01               698 	mov	a,#(__str_5 >> 8)
+   009F C0 E0               699 	push	acc
+   00A1 74 80               700 	mov	a,#0x80
+   00A3 C0 E0               701 	push	acc
+                            702 ;	genCall
+   00A5 12s00r00            703 	lcall	_printf
+   00A8 15 81               704 	dec	sp
+   00AA 15 81               705 	dec	sp
+   00AC 15 81               706 	dec	sp
+                            707 ;	../Source/Lab3sup.c:56: printf ("\n\r--------------------------------------------------------------------------------");
+                            708 ;	genIpush
+   00AE 74r53               709 	mov	a,#__str_6
+   00B0 C0 E0               710 	push	acc
+   00B2 74s01               711 	mov	a,#(__str_6 >> 8)
+   00B4 C0 E0               712 	push	acc
+   00B6 74 80               713 	mov	a,#0x80
+   00B8 C0 E0               714 	push	acc
+                            715 ;	genCall
+   00BA 12s00r00            716 	lcall	_printf
+   00BD 15 81               717 	dec	sp
+   00BF 15 81               718 	dec	sp
+   00C1 15 81               719 	dec	sp
+                            720 ;	../Source/Lab3sup.c:57: printf ("\n\n\r                                MAIN MENU");
+                            721 ;	genIpush
+   00C3 74rA6               722 	mov	a,#__str_7
+   00C5 C0 E0               723 	push	acc
+   00C7 74s01               724 	mov	a,#(__str_7 >> 8)
+   00C9 C0 E0               725 	push	acc
+   00CB 74 80               726 	mov	a,#0x80
+   00CD C0 E0               727 	push	acc
+                            728 ;	genCall
+   00CF 12s00r00            729 	lcall	_printf
+   00D2 15 81               730 	dec	sp
+   00D4 15 81               731 	dec	sp
+   00D6 15 81               732 	dec	sp
+                            733 ;	../Source/Lab3sup.c:58: printf ("\n\r--------------------------------------------------------------------------------");
+                            734 ;	genIpush
+   00D8 74r53               735 	mov	a,#__str_6
+   00DA C0 E0               736 	push	acc
+   00DC 74s01               737 	mov	a,#(__str_6 >> 8)
+   00DE C0 E0               738 	push	acc
+   00E0 74 80               739 	mov	a,#0x80
+   00E2 C0 E0               740 	push	acc
+                            741 ;	genCall
+   00E4 12s00r00            742 	lcall	_printf
+   00E7 15 81               743 	dec	sp
+   00E9 15 81               744 	dec	sp
+   00EB 15 81               745 	dec	sp
+                            746 ;	../Source/Lab3sup.c:59: printf ("\n\r1.Clear Counter 0 (reset counter to zero)");
+                            747 ;	genIpush
+   00ED 74rD3               748 	mov	a,#__str_8
+   00EF C0 E0               749 	push	acc
+   00F1 74s01               750 	mov	a,#(__str_8 >> 8)
+   00F3 C0 E0               751 	push	acc
+   00F5 74 80               752 	mov	a,#0x80
+   00F7 C0 E0               753 	push	acc
+                            754 ;	genCall
+   00F9 12s00r00            755 	lcall	_printf
+   00FC 15 81               756 	dec	sp
+   00FE 15 81               757 	dec	sp
+   0100 15 81               758 	dec	sp
+                            759 ;	../Source/Lab3sup.c:60: printf ("\n\r2.Run Counter 0 (set TR0 bit)");
+                            760 ;	genIpush
+   0102 74rFF               761 	mov	a,#__str_9
+   0104 C0 E0               762 	push	acc
+   0106 74s01               763 	mov	a,#(__str_9 >> 8)
+   0108 C0 E0               764 	push	acc
+   010A 74 80               765 	mov	a,#0x80
+   010C C0 E0               766 	push	acc
+                            767 ;	genCall
+   010E 12s00r00            768 	lcall	_printf
+   0111 15 81               769 	dec	sp
+   0113 15 81               770 	dec	sp
+   0115 15 81               771 	dec	sp
+                            772 ;	../Source/Lab3sup.c:61: printf ("\n\r3.Stop Counter 0 (clear TR0 bit)");
+                            773 ;	genIpush
+   0117 74r1F               774 	mov	a,#__str_10
+   0119 C0 E0               775 	push	acc
+   011B 74s02               776 	mov	a,#(__str_10 >> 8)
+   011D C0 E0               777 	push	acc
+   011F 74 80               778 	mov	a,#0x80
+   0121 C0 E0               779 	push	acc
+                            780 ;	genCall
+   0123 12s00r00            781 	lcall	_printf
+   0126 15 81               782 	dec	sp
+   0128 15 81               783 	dec	sp
+   012A 15 81               784 	dec	sp
+                            785 ;	../Source/Lab3sup.c:62: printf ("\n\r4.Run PWM (turn on both PWM outputs)");
+                            786 ;	genIpush
+   012C 74r42               787 	mov	a,#__str_11
+   012E C0 E0               788 	push	acc
+   0130 74s02               789 	mov	a,#(__str_11 >> 8)
+   0132 C0 E0               790 	push	acc
+   0134 74 80               791 	mov	a,#0x80
+   0136 C0 E0               792 	push	acc
+                            793 ;	genCall
+   0138 12s00r00            794 	lcall	_printf
+   013B 15 81               795 	dec	sp
+   013D 15 81               796 	dec	sp
+   013F 15 81               797 	dec	sp
+                            798 ;	../Source/Lab3sup.c:63: printf ("\n\r5.Stop PWM (turn off both PWM outputs)");
+                            799 ;	genIpush
+   0141 74r69               800 	mov	a,#__str_12
+   0143 C0 E0               801 	push	acc
+   0145 74s02               802 	mov	a,#(__str_12 >> 8)
+   0147 C0 E0               803 	push	acc
+   0149 74 80               804 	mov	a,#0x80
+   014B C0 E0               805 	push	acc
+                            806 ;	genCall
+   014D 12s00r00            807 	lcall	_printf
+   0150 15 81               808 	dec	sp
+   0152 15 81               809 	dec	sp
+   0154 15 81               810 	dec	sp
+                            811 ;	../Source/Lab3sup.c:64: printf ("\n\r6.Read Counter 0 and print out current value (verifiable numbers) to the serial port");
+                            812 ;	genIpush
+   0156 74r92               813 	mov	a,#__str_13
+   0158 C0 E0               814 	push	acc
+   015A 74s02               815 	mov	a,#(__str_13 >> 8)
+   015C C0 E0               816 	push	acc
+   015E 74 80               817 	mov	a,#0x80
+   0160 C0 E0               818 	push	acc
+                            819 ;	genCall
+   0162 12s00r00            820 	lcall	_printf
+   0165 15 81               821 	dec	sp
+   0167 15 81               822 	dec	sp
+   0169 15 81               823 	dec	sp
+                            824 ;	../Source/Lab3sup.c:65: printf ("\n\r7.Enter Idle mode (set IDLE bit in PCON register)");
+                            825 ;	genIpush
+   016B 74rE9               826 	mov	a,#__str_14
+   016D C0 E0               827 	push	acc
+   016F 74s02               828 	mov	a,#(__str_14 >> 8)
+   0171 C0 E0               829 	push	acc
+   0173 74 80               830 	mov	a,#0x80
+   0175 C0 E0               831 	push	acc
+                            832 ;	genCall
+   0177 12s00r00            833 	lcall	_printf
+   017A 15 81               834 	dec	sp
+   017C 15 81               835 	dec	sp
+   017E 15 81               836 	dec	sp
+                            837 ;	../Source/Lab3sup.c:66: printf ("\n\r8.Enter Power Down mode (set PDE bit in PCON register)");
+                            838 ;	genIpush
+   0180 74r1D               839 	mov	a,#__str_15
+   0182 C0 E0               840 	push	acc
+   0184 74s03               841 	mov	a,#(__str_15 >> 8)
+   0186 C0 E0               842 	push	acc
+   0188 74 80               843 	mov	a,#0x80
+   018A C0 E0               844 	push	acc
+                            845 ;	genCall
+   018C 12s00r00            846 	lcall	_printf
+   018F 15 81               847 	dec	sp
+   0191 15 81               848 	dec	sp
+   0193 15 81               849 	dec	sp
+                            850 ;	../Source/Lab3sup.c:67: printf ("\n\r9.To check Status of the system");
+                            851 ;	genIpush
+   0195 74r56               852 	mov	a,#__str_16
+   0197 C0 E0               853 	push	acc
+   0199 74s03               854 	mov	a,#(__str_16 >> 8)
+   019B C0 E0               855 	push	acc
+   019D 74 80               856 	mov	a,#0x80
+   019F C0 E0               857 	push	acc
+                            858 ;	genCall
+   01A1 12s00r00            859 	lcall	_printf
+   01A4 15 81               860 	dec	sp
+   01A6 15 81               861 	dec	sp
+   01A8 15 81               862 	dec	sp
+                            863 ;	../Source/Lab3sup.c:68: printf ("\n\r--------------------------------------------------------------------------------");
+                            864 ;	genIpush
+   01AA 74r53               865 	mov	a,#__str_6
+   01AC C0 E0               866 	push	acc
+   01AE 74s01               867 	mov	a,#(__str_6 >> 8)
+   01B0 C0 E0               868 	push	acc
+   01B2 74 80               869 	mov	a,#0x80
+   01B4 C0 E0               870 	push	acc
+                            871 ;	genCall
+   01B6 12s00r00            872 	lcall	_printf
+   01B9 15 81               873 	dec	sp
+   01BB 15 81               874 	dec	sp
+   01BD 15 81               875 	dec	sp
+                            876 ;	../Source/Lab3sup.c:69: printf ("\n\r(1-9):");
+                            877 ;	genIpush
+   01BF 74r78               878 	mov	a,#__str_17
+   01C1 C0 E0               879 	push	acc
+   01C3 74s03               880 	mov	a,#(__str_17 >> 8)
+   01C5 C0 E0               881 	push	acc
+   01C7 74 80               882 	mov	a,#0x80
+   01C9 C0 E0               883 	push	acc
+                            884 ;	genCall
+   01CB 12s00r00            885 	lcall	_printf
+   01CE 15 81               886 	dec	sp
+   01D0 15 81               887 	dec	sp
+   01D2 15 81               888 	dec	sp
+                            889 ;	../Source/Lab3sup.c:71: select=getchar();
+                            890 ;	genCall
+   01D4 12s06r58            891 	lcall	_getchar
+   01D7 AA 82               892 	mov	r2,dpl
+                            893 ;	genAssign
+   01D9 90s00r00            894 	mov	dptr,#_select
+   01DC EA                  895 	mov	a,r2
+   01DD F0                  896 	movx	@dptr,a
+                            897 ;	../Source/Lab3sup.c:72: selection= select-48;
+                            898 ;	genCast
+   01DE EA                  899 	mov	a,r2
+   01DF 33                  900 	rlc	a
+   01E0 95 E0               901 	subb	a,acc
+   01E2 FB                  902 	mov	r3,a
+                            903 ;	genMinus
+   01E3 EA                  904 	mov	a,r2
+   01E4 24 D0               905 	add	a,#0xd0
+   01E6 FA                  906 	mov	r2,a
+   01E7 EB                  907 	mov	a,r3
+   01E8 34 FF               908 	addc	a,#0xff
+   01EA FB                  909 	mov	r3,a
+                            910 ;	genAssign
+   01EB 90s00r01            911 	mov	dptr,#_selection
+   01EE EA                  912 	mov	a,r2
+   01EF F0                  913 	movx	@dptr,a
+   01F0 A3                  914 	inc	dptr
+   01F1 EB                  915 	mov	a,r3
+   01F2 F0                  916 	movx	@dptr,a
+                            917 ;	../Source/Lab3sup.c:73: switch(selection)
+                            918 ;	genAssign
+   01F3 8A 04               919 	mov	ar4,r2
+                            920 ;	genCmpLt
+                            921 ;	genCmp
+                            922 ;	peephole 177.h	optimized mov sequence
+   01F5 EB                  923 	mov	a,r3
+                            924 ;	Peephole 236.i	used r5 instead of ar5
+   01F6 FD                  925 	mov	r5,a
+                            926 ;	genIfxJump
+   01F7 30 E7 03            927 	jnb	acc.7,00145$
+   01FA 02s05rBE            928 	ljmp	00128$
+   01FD                     929 00145$:
+                            930 ;	genCmpGt
+                            931 ;	genCmp
+   01FD C3                  932 	clr	c
+   01FE 74 09               933 	mov	a,#0x09
+   0200 9A                  934 	subb	a,r2
+                            935 ;	Peephole 159	avoided xrl during execution
+   0201 74 80               936 	mov	a,#(0x00 ^ 0x80)
+   0203 8B F0               937 	mov	b,r3
+   0205 63 F0 80            938 	xrl	b,#0x80
+   0208 95 F0               939 	subb	a,b
+                            940 ;	genIfxJump
+   020A 50 03               941 	jnc	00146$
+   020C 02s05rBE            942 	ljmp	00128$
+   020F                     943 00146$:
+                            944 ;	genJumpTab
+   020F EC                  945 	mov	a,r4
+                            946 ;	Peephole 254	optimized left shift
+   0210 2C                  947 	add	a,r4
+   0211 2C                  948 	add	a,r4
+   0212 90s02r16            949 	mov	dptr,#00147$
+   0215 73                  950 	jmp	@a+dptr
+   0216                     951 00147$:
+   0216 02s05rBE            952 	ljmp	00128$
+   0219 02s02r34            953 	ljmp	00101$
+   021C 02s02r78            954 	ljmp	00102$
+   021F 02s02rDF            955 	ljmp	00106$
+   0222 02s03r47            956 	ljmp	00110$
+   0225 02s03rBA            957 	ljmp	00114$
+   0228 02s04r1E            958 	ljmp	00118$
+   022B 02s04r6A            959 	ljmp	00119$
+   022E 02s04rBC            960 	ljmp	00120$
+   0231 02s05r38            961 	ljmp	00121$
+                            962 ;	../Source/Lab3sup.c:75: case 1:	{
+   0234                     963 00101$:
+                            964 ;	../Source/Lab3sup.c:76: TH0=0; TL0=0; 
+                            965 ;	genAssign
+   0234 75 8C 00            966 	mov	_TH0,#0x00
+                            967 ;	genAssign
+   0237 75 8A 00            968 	mov	_TL0,#0x00
+                            969 ;	../Source/Lab3sup.c:77: timer0=0;
+                            970 ;	genAssign
+   023A 90s00r0B            971 	mov	dptr,#_timer0
+   023D E4                  972 	clr	a
+   023E F0                  973 	movx	@dptr,a
+   023F A3                  974 	inc	dptr
+   0240 F0                  975 	movx	@dptr,a
+                            976 ;	../Source/Lab3sup.c:78: counter_bit=0;
+                            977 ;	genAssign
+   0241 90s00r09            978 	mov	dptr,#_counter_bit
+   0244 E4                  979 	clr	a
+   0245 F0                  980 	movx	@dptr,a
+   0246 A3                  981 	inc	dptr
+   0247 F0                  982 	movx	@dptr,a
+                            983 ;	../Source/Lab3sup.c:79: printf("\n\n\rCounter0 has been cleared\n\n\r");
+                            984 ;	genIpush
+   0248 74r81               985 	mov	a,#__str_18
+   024A C0 E0               986 	push	acc
+   024C 74s03               987 	mov	a,#(__str_18 >> 8)
+   024E C0 E0               988 	push	acc
+   0250 74 80               989 	mov	a,#0x80
+   0252 C0 E0               990 	push	acc
+                            991 ;	genCall
+   0254 12s00r00            992 	lcall	_printf
+   0257 15 81               993 	dec	sp
+   0259 15 81               994 	dec	sp
+   025B 15 81               995 	dec	sp
+                            996 ;	../Source/Lab3sup.c:80: printf("\n\n\rPress any key to go back to the main menu ...");
+                            997 ;	genIpush
+   025D 74rA1               998 	mov	a,#__str_19
+   025F C0 E0               999 	push	acc
+   0261 74s03              1000 	mov	a,#(__str_19 >> 8)
+   0263 C0 E0              1001 	push	acc
+   0265 74 80              1002 	mov	a,#0x80
+   0267 C0 E0              1003 	push	acc
+                           1004 ;	genCall
+   0269 12s00r00           1005 	lcall	_printf
+   026C 15 81              1006 	dec	sp
+   026E 15 81              1007 	dec	sp
+   0270 15 81              1008 	dec	sp
+                           1009 ;	../Source/Lab3sup.c:81: getchar();
+                           1010 ;	genCall
+   0272 12s06r58           1011 	lcall	_getchar
+                           1012 ;	../Source/Lab3sup.c:83: break;	
+   0275 02s00r99           1013 	ljmp	00131$
+                           1014 ;	../Source/Lab3sup.c:84: case 2:	{
+   0278                    1015 00102$:
+                           1016 ;	../Source/Lab3sup.c:85: if(counter_run==0)
+                           1017 ;	genAssign
+   0278 90s00r05           1018 	mov	dptr,#_counter_run
+   027B E0                 1019 	movx	a,@dptr
+   027C FA                 1020 	mov	r2,a
+   027D A3                 1021 	inc	dptr
+   027E E0                 1022 	movx	a,@dptr
+                           1023 ;	genIfx
+   027F FB                 1024 	mov	r3,a
+                           1025 ;	Peephole 135	removed redundant mov
+   0280 4A                 1026 	orl	a,r2
+                           1027 ;	genIfxJump
+                           1028 ;	Peephole 108.b	removed ljmp by inverse jump logic
+   0281 70 44              1029 	jnz	00104$
+                           1030 ;	Peephole 300	removed redundant label 00148$
+                           1031 ;	../Source/Lab3sup.c:87: TR0=1;
+                           1032 ;	genAssign
+   0283 D2 8C              1033 	setb	_TR0
+                           1034 ;	../Source/Lab3sup.c:88: printf("\n\n\rCounter0 RUNNING!\n\n\r");
+                           1035 ;	genIpush
+   0285 74rD2              1036 	mov	a,#__str_20
+   0287 C0 E0              1037 	push	acc
+   0289 74s03              1038 	mov	a,#(__str_20 >> 8)
+   028B C0 E0              1039 	push	acc
+   028D 74 80              1040 	mov	a,#0x80
+   028F C0 E0              1041 	push	acc
+                           1042 ;	genCall
+   0291 12s00r00           1043 	lcall	_printf
+   0294 15 81              1044 	dec	sp
+   0296 15 81              1045 	dec	sp
+   0298 15 81              1046 	dec	sp
+                           1047 ;	../Source/Lab3sup.c:89: printf("\n\n\rPress any key to go back to the main menu ...");
+                           1048 ;	genIpush
+   029A 74rA1              1049 	mov	a,#__str_19
+   029C C0 E0              1050 	push	acc
+   029E 74s03              1051 	mov	a,#(__str_19 >> 8)
+   02A0 C0 E0              1052 	push	acc
+   02A2 74 80              1053 	mov	a,#0x80
+   02A4 C0 E0              1054 	push	acc
+                           1055 ;	genCall
+   02A6 12s00r00           1056 	lcall	_printf
+   02A9 15 81              1057 	dec	sp
+   02AB 15 81              1058 	dec	sp
+   02AD 15 81              1059 	dec	sp
+                           1060 ;	../Source/Lab3sup.c:90: getchar();
+                           1061 ;	genCall
+   02AF 12s06r58           1062 	lcall	_getchar
+                           1063 ;	../Source/Lab3sup.c:91: counter_run=1;
+                           1064 ;	genAssign
+   02B2 90s00r05           1065 	mov	dptr,#_counter_run
+   02B5 74 01              1066 	mov	a,#0x01
+   02B7 F0                 1067 	movx	@dptr,a
+   02B8 E4                 1068 	clr	a
+   02B9 A3                 1069 	inc	dptr
+   02BA F0                 1070 	movx	@dptr,a
+                           1071 ;	../Source/Lab3sup.c:92: counter_bit=1;
+                           1072 ;	genAssign
+   02BB 90s00r09           1073 	mov	dptr,#_counter_bit
+   02BE 74 01              1074 	mov	a,#0x01
+   02C0 F0                 1075 	movx	@dptr,a
+   02C1 E4                 1076 	clr	a
+   02C2 A3                 1077 	inc	dptr
+   02C3 F0                 1078 	movx	@dptr,a
+   02C4 02s00r99           1079 	ljmp	00131$
+   02C7                    1080 00104$:
+                           1081 ;	../Source/Lab3sup.c:95: printf("\n\n\rCounter0 is already operational");
+                           1082 ;	genIpush
+   02C7 74rEA              1083 	mov	a,#__str_21
+   02C9 C0 E0              1084 	push	acc
+   02CB 74s03              1085 	mov	a,#(__str_21 >> 8)
+   02CD C0 E0              1086 	push	acc
+   02CF 74 80              1087 	mov	a,#0x80
+   02D1 C0 E0              1088 	push	acc
+                           1089 ;	genCall
+   02D3 12s00r00           1090 	lcall	_printf
+   02D6 15 81              1091 	dec	sp
+   02D8 15 81              1092 	dec	sp
+   02DA 15 81              1093 	dec	sp
+                           1094 ;	../Source/Lab3sup.c:97: break;
+   02DC 02s00r99           1095 	ljmp	00131$
+                           1096 ;	../Source/Lab3sup.c:98: case 3:	{
+   02DF                    1097 00106$:
+                           1098 ;	../Source/Lab3sup.c:99: if(counter_run==1)
+                           1099 ;	genAssign
+   02DF 90s00r05           1100 	mov	dptr,#_counter_run
+   02E2 E0                 1101 	movx	a,@dptr
+   02E3 FA                 1102 	mov	r2,a
+   02E4 A3                 1103 	inc	dptr
+   02E5 E0                 1104 	movx	a,@dptr
+   02E6 FB                 1105 	mov	r3,a
+                           1106 ;	genCmpEq
+                           1107 ;	gencjneshort
+                           1108 ;	Peephole 112.b	changed ljmp to sjmp
+                           1109 ;	Peephole 198.a	optimized misc jump sequence
+   02E7 BA 01 45           1110 	cjne	r2,#0x01,00108$
+   02EA BB 00 42           1111 	cjne	r3,#0x00,00108$
+                           1112 ;	Peephole 200.b	removed redundant sjmp
+                           1113 ;	Peephole 300	removed redundant label 00149$
+                           1114 ;	Peephole 300	removed redundant label 00150$
+                           1115 ;	../Source/Lab3sup.c:101: TR0=0;
+                           1116 ;	genAssign
+   02ED C2 8C              1117 	clr	_TR0
+                           1118 ;	../Source/Lab3sup.c:102: counter_run=0;
+                           1119 ;	genAssign
+   02EF 90s00r05           1120 	mov	dptr,#_counter_run
+   02F2 E4                 1121 	clr	a
+   02F3 F0                 1122 	movx	@dptr,a
+   02F4 A3                 1123 	inc	dptr
+   02F5 F0                 1124 	movx	@dptr,a
+                           1125 ;	../Source/Lab3sup.c:103: counter_bit=1;
+                           1126 ;	genAssign
+   02F6 90s00r09           1127 	mov	dptr,#_counter_bit
+   02F9 74 01              1128 	mov	a,#0x01
+   02FB F0                 1129 	movx	@dptr,a
+   02FC E4                 1130 	clr	a
+   02FD A3                 1131 	inc	dptr
+   02FE F0                 1132 	movx	@dptr,a
+                           1133 ;	../Source/Lab3sup.c:104: printf("\n\n\rCounter0 STOPPED!\n\n\r");
+                           1134 ;	genIpush
+   02FF 74r0D              1135 	mov	a,#__str_22
+   0301 C0 E0              1136 	push	acc
+   0303 74s04              1137 	mov	a,#(__str_22 >> 8)
+   0305 C0 E0              1138 	push	acc
+   0307 74 80              1139 	mov	a,#0x80
+   0309 C0 E0              1140 	push	acc
+                           1141 ;	genCall
+   030B 12s00r00           1142 	lcall	_printf
+   030E 15 81              1143 	dec	sp
+   0310 15 81              1144 	dec	sp
+   0312 15 81              1145 	dec	sp
+                           1146 ;	../Source/Lab3sup.c:105: printf("\n\n\rPress any key to go back to the main menu ...");
+                           1147 ;	genIpush
+   0314 74rA1              1148 	mov	a,#__str_19
+   0316 C0 E0              1149 	push	acc
+   0318 74s03              1150 	mov	a,#(__str_19 >> 8)
+   031A C0 E0              1151 	push	acc
+   031C 74 80              1152 	mov	a,#0x80
+   031E C0 E0              1153 	push	acc
+                           1154 ;	genCall
+   0320 12s00r00           1155 	lcall	_printf
+   0323 15 81              1156 	dec	sp
+   0325 15 81              1157 	dec	sp
+   0327 15 81              1158 	dec	sp
+                           1159 ;	../Source/Lab3sup.c:106: getchar();
+                           1160 ;	genCall
+   0329 12s06r58           1161 	lcall	_getchar
+   032C 02s00r99           1162 	ljmp	00131$
+   032F                    1163 00108$:
+                           1164 ;	../Source/Lab3sup.c:109: printf("\n\n\rCounter0 is not operational. Hence Cannot be stopped");
+                           1165 ;	genIpush
+   032F 74r25              1166 	mov	a,#__str_23
+   0331 C0 E0              1167 	push	acc
+   0333 74s04              1168 	mov	a,#(__str_23 >> 8)
+   0335 C0 E0              1169 	push	acc
+   0337 74 80              1170 	mov	a,#0x80
+   0339 C0 E0              1171 	push	acc
+                           1172 ;	genCall
+   033B 12s00r00           1173 	lcall	_printf
+   033E 15 81              1174 	dec	sp
+   0340 15 81              1175 	dec	sp
+   0342 15 81              1176 	dec	sp
+                           1177 ;	../Source/Lab3sup.c:111: break;
+   0344 02s00r99           1178 	ljmp	00131$
+                           1179 ;	../Source/Lab3sup.c:112: case 4:	{
+   0347                    1180 00110$:
+                           1181 ;	../Source/Lab3sup.c:113: if(pwm_run==0)
+                           1182 ;	genAssign
+   0347 90s00r07           1183 	mov	dptr,#_pwm_run
+   034A E0                 1184 	movx	a,@dptr
+   034B FA                 1185 	mov	r2,a
+   034C A3                 1186 	inc	dptr
+   034D E0                 1187 	movx	a,@dptr
+                           1188 ;	genIfx
+   034E FB                 1189 	mov	r3,a
+                           1190 ;	Peephole 135	removed redundant mov
+   034F 4A                 1191 	orl	a,r2
+                           1192 ;	genIfxJump
+                           1193 ;	Peephole 108.b	removed ljmp by inverse jump logic
+   0350 70 50              1194 	jnz	00112$
+                           1195 ;	Peephole 300	removed redundant label 00151$
+                           1196 ;	../Source/Lab3sup.c:115: printf("\n\n\rPWM outputs initiated\n\n\r");
+                           1197 ;	genIpush
+   0352 74r5D              1198 	mov	a,#__str_24
+   0354 C0 E0              1199 	push	acc
+   0356 74s04              1200 	mov	a,#(__str_24 >> 8)
+   0358 C0 E0              1201 	push	acc
+   035A 74 80              1202 	mov	a,#0x80
+   035C C0 E0              1203 	push	acc
+                           1204 ;	genCall
+   035E 12s00r00           1205 	lcall	_printf
+   0361 15 81              1206 	dec	sp
+   0363 15 81              1207 	dec	sp
+   0365 15 81              1208 	dec	sp
+                           1209 ;	../Source/Lab3sup.c:116: printf_tiny("\n\r PWM  ON \n\n\r  P1.3 D=5% P1.4 D=60% \n\r");
+                           1210 ;	genIpush
+   0367 74r79              1211 	mov	a,#__str_25
+   0369 C0 E0              1212 	push	acc
+   036B 74s04              1213 	mov	a,#(__str_25 >> 8)
+   036D C0 E0              1214 	push	acc
+                           1215 ;	genCall
+   036F 12s00r00           1216 	lcall	_printf_tiny
+   0372 15 81              1217 	dec	sp
+   0374 15 81              1218 	dec	sp
+                           1219 ;	../Source/Lab3sup.c:118: CCAPM0 |=0x42;  //ECOM0 =1 & CEX0=1 
+                           1220 ;	genOr
+   0376 43 DA 42           1221 	orl	_CCAPM0,#0x42
+                           1222 ;	../Source/Lab3sup.c:119: CCAPM1 |=0x42;
+                           1223 ;	genOr
+   0379 43 DB 42           1224 	orl	_CCAPM1,#0x42
+                           1225 ;	../Source/Lab3sup.c:120: CR =1;              //setting the CCON BIT to start the common timer and turn PWN ON
+                           1226 ;	genAssign
+   037C D2 DE              1227 	setb	_CR
+                           1228 ;	../Source/Lab3sup.c:121: pwm_run=1;
+                           1229 ;	genAssign
+   037E 90s00r07           1230 	mov	dptr,#_pwm_run
+   0381 74 01              1231 	mov	a,#0x01
+   0383 F0                 1232 	movx	@dptr,a
+   0384 E4                 1233 	clr	a
+   0385 A3                 1234 	inc	dptr
+   0386 F0                 1235 	movx	@dptr,a
+                           1236 ;	../Source/Lab3sup.c:122: printf("\n\n\rPress any key to go back to the main menu ...");
+                           1237 ;	genIpush
+   0387 74rA1              1238 	mov	a,#__str_19
+   0389 C0 E0              1239 	push	acc
+   038B 74s03              1240 	mov	a,#(__str_19 >> 8)
+   038D C0 E0              1241 	push	acc
+   038F 74 80              1242 	mov	a,#0x80
+   0391 C0 E0              1243 	push	acc
+                           1244 ;	genCall
+   0393 12s00r00           1245 	lcall	_printf
+   0396 15 81              1246 	dec	sp
+   0398 15 81              1247 	dec	sp
+   039A 15 81              1248 	dec	sp
+                           1249 ;	../Source/Lab3sup.c:123: getchar();
+                           1250 ;	genCall
+   039C 12s06r58           1251 	lcall	_getchar
+   039F 02s00r99           1252 	ljmp	00131$
+   03A2                    1253 00112$:
+                           1254 ;	../Source/Lab3sup.c:126: printf("\n\n\rPWM outputs are already rolling ");				
+                           1255 ;	genIpush
+   03A2 74rA1              1256 	mov	a,#__str_26
+   03A4 C0 E0              1257 	push	acc
+   03A6 74s04              1258 	mov	a,#(__str_26 >> 8)
+   03A8 C0 E0              1259 	push	acc
+   03AA 74 80              1260 	mov	a,#0x80
+   03AC C0 E0              1261 	push	acc
+                           1262 ;	genCall
+   03AE 12s00r00           1263 	lcall	_printf
+   03B1 15 81              1264 	dec	sp
+   03B3 15 81              1265 	dec	sp
+   03B5 15 81              1266 	dec	sp
+                           1267 ;	../Source/Lab3sup.c:128: break;
+   03B7 02s00r99           1268 	ljmp	00131$
+                           1269 ;	../Source/Lab3sup.c:129: case 5:	{
+   03BA                    1270 00114$:
+                           1271 ;	../Source/Lab3sup.c:130: if(pwm_run==1)
+                           1272 ;	genAssign
+   03BA 90s00r07           1273 	mov	dptr,#_pwm_run
+   03BD E0                 1274 	movx	a,@dptr
+   03BE FA                 1275 	mov	r2,a
+   03BF A3                 1276 	inc	dptr
+   03C0 E0                 1277 	movx	a,@dptr
+   03C1 FB                 1278 	mov	r3,a
+                           1279 ;	genCmpEq
+                           1280 ;	gencjneshort
+                           1281 ;	Peephole 112.b	changed ljmp to sjmp
+                           1282 ;	Peephole 198.a	optimized misc jump sequence
+   03C2 BA 01 41           1283 	cjne	r2,#0x01,00116$
+   03C5 BB 00 3E           1284 	cjne	r3,#0x00,00116$
+                           1285 ;	Peephole 200.b	removed redundant sjmp
+                           1286 ;	Peephole 300	removed redundant label 00152$
+                           1287 ;	Peephole 300	removed redundant label 00153$
+                           1288 ;	../Source/Lab3sup.c:132: printf("\n\n\rPWM outputs ended\n\n\r");
+                           1289 ;	genIpush
+   03C8 74rC5              1290 	mov	a,#__str_27
+   03CA C0 E0              1291 	push	acc
+   03CC 74s04              1292 	mov	a,#(__str_27 >> 8)
+   03CE C0 E0              1293 	push	acc
+   03D0 74 80              1294 	mov	a,#0x80
+   03D2 C0 E0              1295 	push	acc
+                           1296 ;	genCall
+   03D4 12s00r00           1297 	lcall	_printf
+   03D7 15 81              1298 	dec	sp
+   03D9 15 81              1299 	dec	sp
+   03DB 15 81              1300 	dec	sp
+                           1301 ;	../Source/Lab3sup.c:133: CR = 0;             //stopping the common clock CH and CL 
+                           1302 ;	genAssign
+   03DD C2 DE              1303 	clr	_CR
+                           1304 ;	../Source/Lab3sup.c:134: CCAPM0=CCAPM1&0xFD; //Disabling PWM bit 
+                           1305 ;	genAnd
+   03DF 74 FD              1306 	mov	a,#0xFD
+   03E1 55 DB              1307 	anl	a,_CCAPM1
+   03E3 F5 DA              1308 	mov	_CCAPM0,a
+                           1309 ;	../Source/Lab3sup.c:135: CCAPM1=CCAPM2&0xFD;
+                           1310 ;	genAnd
+   03E5 74 FD              1311 	mov	a,#0xFD
+   03E7 55 DC              1312 	anl	a,_CCAPM2
+   03E9 F5 DB              1313 	mov	_CCAPM1,a
+                           1314 ;	../Source/Lab3sup.c:136: printf("\n\n\rPress any key to go back to the main menu ...");
+                           1315 ;	genIpush
+   03EB 74rA1              1316 	mov	a,#__str_19
+   03ED C0 E0              1317 	push	acc
+   03EF 74s03              1318 	mov	a,#(__str_19 >> 8)
+   03F1 C0 E0              1319 	push	acc
+   03F3 74 80              1320 	mov	a,#0x80
+   03F5 C0 E0              1321 	push	acc
+                           1322 ;	genCall
+   03F7 12s00r00           1323 	lcall	_printf
+   03FA 15 81              1324 	dec	sp
+   03FC 15 81              1325 	dec	sp
+   03FE 15 81              1326 	dec	sp
+                           1327 ;	../Source/Lab3sup.c:137: getchar();
+                           1328 ;	genCall
+   0400 12s06r58           1329 	lcall	_getchar
+   0403 02s00r99           1330 	ljmp	00131$
+   0406                    1331 00116$:
+                           1332 ;	../Source/Lab3sup.c:140: printf("PWM outputs are not operational. Hence cannot be stopped");	
+                           1333 ;	genIpush
+   0406 74rDD              1334 	mov	a,#__str_28
+   0408 C0 E0              1335 	push	acc
+   040A 74s04              1336 	mov	a,#(__str_28 >> 8)
+   040C C0 E0              1337 	push	acc
+   040E 74 80              1338 	mov	a,#0x80
+   0410 C0 E0              1339 	push	acc
+                           1340 ;	genCall
+   0412 12s00r00           1341 	lcall	_printf
+   0415 15 81              1342 	dec	sp
+   0417 15 81              1343 	dec	sp
+   0419 15 81              1344 	dec	sp
+                           1345 ;	../Source/Lab3sup.c:142: break;			
+   041B 02s00r99           1346 	ljmp	00131$
+                           1347 ;	../Source/Lab3sup.c:143: case 6:	{
+   041E                    1348 00118$:
+                           1349 ;	../Source/Lab3sup.c:144: counter0_count= (int)(TH0*0x100+TL0);
+                           1350 ;	genCast
+   041E AA 8C              1351 	mov	r2,_TH0
+                           1352 ;	genLeftShift
+                           1353 ;	genLeftShiftLiteral
+                           1354 ;	genlshTwo
+                           1355 ;	peephole 177.e	removed redundant move
+   0420 8A 03              1356 	mov	ar3,r2
+   0422 7A 00              1357 	mov	r2,#0x00
+                           1358 ;	genCast
+   0424 AC 8A              1359 	mov	r4,_TL0
+   0426 7D 00              1360 	mov	r5,#0x00
+                           1361 ;	genPlus
+                           1362 ;	Peephole 236.g	used r4 instead of ar4
+   0428 EC                 1363 	mov	a,r4
+                           1364 ;	Peephole 236.a	used r2 instead of ar2
+   0429 2A                 1365 	add	a,r2
+   042A FA                 1366 	mov	r2,a
+                           1367 ;	Peephole 236.g	used r5 instead of ar5
+   042B ED                 1368 	mov	a,r5
+                           1369 ;	Peephole 236.b	used r3 instead of ar3
+   042C 3B                 1370 	addc	a,r3
+   042D FB                 1371 	mov	r3,a
+                           1372 ;	genAssign
+   042E 90s00r03           1373 	mov	dptr,#_counter0_count
+   0431 EA                 1374 	mov	a,r2
+   0432 F0                 1375 	movx	@dptr,a
+   0433 A3                 1376 	inc	dptr
+   0434 EB                 1377 	mov	a,r3
+   0435 F0                 1378 	movx	@dptr,a
+                           1379 ;	../Source/Lab3sup.c:145: printf("\n\n\rThe counter output is %d \n\n\r", counter0_count);
+                           1380 ;	genIpush
+   0436 C0 02              1381 	push	ar2
+   0438 C0 03              1382 	push	ar3
+                           1383 ;	genIpush
+   043A 74r16              1384 	mov	a,#__str_29
+   043C C0 E0              1385 	push	acc
+   043E 74s05              1386 	mov	a,#(__str_29 >> 8)
+   0440 C0 E0              1387 	push	acc
+   0442 74 80              1388 	mov	a,#0x80
+   0444 C0 E0              1389 	push	acc
+                           1390 ;	genCall
+   0446 12s00r00           1391 	lcall	_printf
+   0449 E5 81              1392 	mov	a,sp
+   044B 24 FB              1393 	add	a,#0xfb
+   044D F5 81              1394 	mov	sp,a
+                           1395 ;	../Source/Lab3sup.c:146: printf("\n\n\rPress any key to go back to the main menu ...");
+                           1396 ;	genIpush
+   044F 74rA1              1397 	mov	a,#__str_19
+   0451 C0 E0              1398 	push	acc
+   0453 74s03              1399 	mov	a,#(__str_19 >> 8)
+   0455 C0 E0              1400 	push	acc
+   0457 74 80              1401 	mov	a,#0x80
+   0459 C0 E0              1402 	push	acc
+                           1403 ;	genCall
+   045B 12s00r00           1404 	lcall	_printf
+   045E 15 81              1405 	dec	sp
+   0460 15 81              1406 	dec	sp
+   0462 15 81              1407 	dec	sp
+                           1408 ;	../Source/Lab3sup.c:147: getchar();				
+                           1409 ;	genCall
+   0464 12s06r58           1410 	lcall	_getchar
+                           1411 ;	../Source/Lab3sup.c:149: break;
+   0467 02s00r99           1412 	ljmp	00131$
+                           1413 ;	../Source/Lab3sup.c:150: case 7:	{
+   046A                    1414 00119$:
+                           1415 ;	../Source/Lab3sup.c:151: printf("\n\n\rProcessor in Idle mode\n\n\r");
+                           1416 ;	genIpush
+   046A 74r36              1417 	mov	a,#__str_30
+   046C C0 E0              1418 	push	acc
+   046E 74s05              1419 	mov	a,#(__str_30 >> 8)
+   0470 C0 E0              1420 	push	acc
+   0472 74 80              1421 	mov	a,#0x80
+   0474 C0 E0              1422 	push	acc
+                           1423 ;	genCall
+   0476 12s00r00           1424 	lcall	_printf
+   0479 15 81              1425 	dec	sp
+   047B 15 81              1426 	dec	sp
+   047D 15 81              1427 	dec	sp
+                           1428 ;	../Source/Lab3sup.c:152: IE=0x80;			//enabling global interrupts
+                           1429 ;	genAssign
+   047F 75 A8 80           1430 	mov	_IE,#0x80
+                           1431 ;	../Source/Lab3sup.c:153: EX0 = 1;		//enabling External interrupt
+                           1432 ;	genAssign
+   0482 D2 A8              1433 	setb	_EX0
+                           1434 ;	../Source/Lab3sup.c:154: PCON=PCON|0x01;		//Setting PCON register to enter Idle mode
+                           1435 ;	genOr
+   0484 43 87 01           1436 	orl	_PCON,#0x01
+                           1437 ;	../Source/Lab3sup.c:155: EX0 =0; 									 		
+                           1438 ;	genAssign
+   0487 C2 A8              1439 	clr	_EX0
+                           1440 ;	../Source/Lab3sup.c:156: IE=0x00;			
+                           1441 ;	genAssign
+   0489 75 A8 00           1442 	mov	_IE,#0x00
+                           1443 ;	../Source/Lab3sup.c:157: printf("\n\n\rSuccessfully EXITED idle mode \n\n\r");
+                           1444 ;	genIpush
+   048C 74r53              1445 	mov	a,#__str_31
+   048E C0 E0              1446 	push	acc
+   0490 74s05              1447 	mov	a,#(__str_31 >> 8)
+   0492 C0 E0              1448 	push	acc
+   0494 74 80              1449 	mov	a,#0x80
+   0496 C0 E0              1450 	push	acc
+                           1451 ;	genCall
+   0498 12s00r00           1452 	lcall	_printf
+   049B 15 81              1453 	dec	sp
+   049D 15 81              1454 	dec	sp
+   049F 15 81              1455 	dec	sp
+                           1456 ;	../Source/Lab3sup.c:158: printf("\n\n\rPress any key to go back to the main menu ...");
+                           1457 ;	genIpush
+   04A1 74rA1              1458 	mov	a,#__str_19
+   04A3 C0 E0              1459 	push	acc
+   04A5 74s03              1460 	mov	a,#(__str_19 >> 8)
+   04A7 C0 E0              1461 	push	acc
+   04A9 74 80              1462 	mov	a,#0x80
+   04AB C0 E0              1463 	push	acc
+                           1464 ;	genCall
+   04AD 12s00r00           1465 	lcall	_printf
+   04B0 15 81              1466 	dec	sp
+   04B2 15 81              1467 	dec	sp
+   04B4 15 81              1468 	dec	sp
+                           1469 ;	../Source/Lab3sup.c:159: getchar();
+                           1470 ;	genCall
+   04B6 12s06r58           1471 	lcall	_getchar
+                           1472 ;	../Source/Lab3sup.c:161: break;
+   04B9 02s00r99           1473 	ljmp	00131$
+                           1474 ;	../Source/Lab3sup.c:162: case 8:	{
+   04BC                    1475 00120$:
+                           1476 ;	../Source/Lab3sup.c:163: printf("\n\n\rProcessor in Power Down Mode\n\n\r");
+                           1477 ;	genIpush
+   04BC 74r78              1478 	mov	a,#__str_32
+   04BE C0 E0              1479 	push	acc
+   04C0 74s05              1480 	mov	a,#(__str_32 >> 8)
+   04C2 C0 E0              1481 	push	acc
+   04C4 74 80              1482 	mov	a,#0x80
+   04C6 C0 E0              1483 	push	acc
+                           1484 ;	genCall
+   04C8 12s00r00           1485 	lcall	_printf
+   04CB 15 81              1486 	dec	sp
+   04CD 15 81              1487 	dec	sp
+   04CF 15 81              1488 	dec	sp
+                           1489 ;	../Source/Lab3sup.c:164: IE=0x80;
+                           1490 ;	genAssign
+   04D1 75 A8 80           1491 	mov	_IE,#0x80
+                           1492 ;	../Source/Lab3sup.c:165: EX0 = 1;
+                           1493 ;	genAssign
+   04D4 D2 A8              1494 	setb	_EX0
+                           1495 ;	../Source/Lab3sup.c:166: printf("\n\n\rEntering power down mode\n\r");
+                           1496 ;	genIpush
+   04D6 74r9B              1497 	mov	a,#__str_33
+   04D8 C0 E0              1498 	push	acc
+   04DA 74s05              1499 	mov	a,#(__str_33 >> 8)
+   04DC C0 E0              1500 	push	acc
+   04DE 74 80              1501 	mov	a,#0x80
+   04E0 C0 E0              1502 	push	acc
+                           1503 ;	genCall
+   04E2 12s00r00           1504 	lcall	_printf
+   04E5 15 81              1505 	dec	sp
+   04E7 15 81              1506 	dec	sp
+   04E9 15 81              1507 	dec	sp
+                           1508 ;	../Source/Lab3sup.c:167: PCON=PCON|0x02;
+                           1509 ;	genOr
+   04EB 43 87 02           1510 	orl	_PCON,#0x02
+                           1511 ;	../Source/Lab3sup.c:171: EX0 =0; 
+                           1512 ;	genAssign
+   04EE C2 A8              1513 	clr	_EX0
+                           1514 ;	../Source/Lab3sup.c:172: IE=0x80;
+                           1515 ;	genAssign
+   04F0 75 A8 80           1516 	mov	_IE,#0x80
+                           1517 ;	../Source/Lab3sup.c:173: printf("\n\n\r"); 									 					
+                           1518 ;	genIpush
+   04F3 74rB9              1519 	mov	a,#__str_34
+   04F5 C0 E0              1520 	push	acc
+   04F7 74s05              1521 	mov	a,#(__str_34 >> 8)
+   04F9 C0 E0              1522 	push	acc
+   04FB 74 80              1523 	mov	a,#0x80
+   04FD C0 E0              1524 	push	acc
+                           1525 ;	genCall
+   04FF 12s00r00           1526 	lcall	_printf
+   0502 15 81              1527 	dec	sp
+   0504 15 81              1528 	dec	sp
+   0506 15 81              1529 	dec	sp
+                           1530 ;	../Source/Lab3sup.c:174: printf("\n\n\rExited power down mode \n\r");
+                           1531 ;	genIpush
+   0508 74rBD              1532 	mov	a,#__str_35
+   050A C0 E0              1533 	push	acc
+   050C 74s05              1534 	mov	a,#(__str_35 >> 8)
+   050E C0 E0              1535 	push	acc
+   0510 74 80              1536 	mov	a,#0x80
+   0512 C0 E0              1537 	push	acc
+                           1538 ;	genCall
+   0514 12s00r00           1539 	lcall	_printf
+   0517 15 81              1540 	dec	sp
+   0519 15 81              1541 	dec	sp
+   051B 15 81              1542 	dec	sp
+                           1543 ;	../Source/Lab3sup.c:175: printf("\n\n\rPress any key to go back to the main menu ...");
+                           1544 ;	genIpush
+   051D 74rA1              1545 	mov	a,#__str_19
+   051F C0 E0              1546 	push	acc
+   0521 74s03              1547 	mov	a,#(__str_19 >> 8)
+   0523 C0 E0              1548 	push	acc
+   0525 74 80              1549 	mov	a,#0x80
+   0527 C0 E0              1550 	push	acc
+                           1551 ;	genCall
+   0529 12s00r00           1552 	lcall	_printf
+   052C 15 81              1553 	dec	sp
+   052E 15 81              1554 	dec	sp
+   0530 15 81              1555 	dec	sp
+                           1556 ;	../Source/Lab3sup.c:176: getchar();										
+                           1557 ;	genCall
+   0532 12s06r58           1558 	lcall	_getchar
+                           1559 ;	../Source/Lab3sup.c:178: break;
+   0535 02s00r99           1560 	ljmp	00131$
+                           1561 ;	../Source/Lab3sup.c:179: case 9: {
+   0538                    1562 00121$:
+                           1563 ;	../Source/Lab3sup.c:180: printf("The staus for the system is as follows");
+                           1564 ;	genIpush
+   0538 74rDA              1565 	mov	a,#__str_36
+   053A C0 E0              1566 	push	acc
+   053C 74s05              1567 	mov	a,#(__str_36 >> 8)
+   053E C0 E0              1568 	push	acc
+   0540 74 80              1569 	mov	a,#0x80
+   0542 C0 E0              1570 	push	acc
+                           1571 ;	genCall
+   0544 12s00r00           1572 	lcall	_printf
+   0547 15 81              1573 	dec	sp
+   0549 15 81              1574 	dec	sp
+   054B 15 81              1575 	dec	sp
+                           1576 ;	../Source/Lab3sup.c:181: if(counter_run==1)
+                           1577 ;	genAssign
+   054D 90s00r05           1578 	mov	dptr,#_counter_run
+   0550 E0                 1579 	movx	a,@dptr
+   0551 FA                 1580 	mov	r2,a
+   0552 A3                 1581 	inc	dptr
+   0553 E0                 1582 	movx	a,@dptr
+   0554 FB                 1583 	mov	r3,a
+                           1584 ;	genCmpEq
+                           1585 ;	gencjneshort
+                           1586 ;	Peephole 112.b	changed ljmp to sjmp
+                           1587 ;	Peephole 198.a	optimized misc jump sequence
+   0555 BA 01 18           1588 	cjne	r2,#0x01,00123$
+   0558 BB 00 15           1589 	cjne	r3,#0x00,00123$
+                           1590 ;	Peephole 200.b	removed redundant sjmp
+                           1591 ;	Peephole 300	removed redundant label 00154$
+                           1592 ;	Peephole 300	removed redundant label 00155$
+                           1593 ;	../Source/Lab3sup.c:182: printf("\n\n\r The Counter0 is running ");
+                           1594 ;	genIpush
+   055B 74r01              1595 	mov	a,#__str_37
+   055D C0 E0              1596 	push	acc
+   055F 74s06              1597 	mov	a,#(__str_37 >> 8)
+   0561 C0 E0              1598 	push	acc
+   0563 74 80              1599 	mov	a,#0x80
+   0565 C0 E0              1600 	push	acc
+                           1601 ;	genCall
+   0567 12s00r00           1602 	lcall	_printf
+   056A 15 81              1603 	dec	sp
+   056C 15 81              1604 	dec	sp
+   056E 15 81              1605 	dec	sp
+   0570                    1606 00123$:
+                           1607 ;	../Source/Lab3sup.c:183: if(pwm_run==1)
+                           1608 ;	genAssign
+   0570 90s00r07           1609 	mov	dptr,#_pwm_run
+   0573 E0                 1610 	movx	a,@dptr
+   0574 FA                 1611 	mov	r2,a
+   0575 A3                 1612 	inc	dptr
+   0576 E0                 1613 	movx	a,@dptr
+   0577 FB                 1614 	mov	r3,a
+                           1615 ;	genCmpEq
+                           1616 ;	gencjneshort
+                           1617 ;	Peephole 112.b	changed ljmp to sjmp
+                           1618 ;	Peephole 198.a	optimized misc jump sequence
+   0578 BA 01 18           1619 	cjne	r2,#0x01,00125$
+   057B BB 00 15           1620 	cjne	r3,#0x00,00125$
+                           1621 ;	Peephole 200.b	removed redundant sjmp
+                           1622 ;	Peephole 300	removed redundant label 00156$
+                           1623 ;	Peephole 300	removed redundant label 00157$
+                           1624 ;	../Source/Lab3sup.c:184: printf("\n\n\r The PWM outputs are running");
+                           1625 ;	genIpush
+   057E 74r1E              1626 	mov	a,#__str_38
+   0580 C0 E0              1627 	push	acc
+   0582 74s06              1628 	mov	a,#(__str_38 >> 8)
+   0584 C0 E0              1629 	push	acc
+   0586 74 80              1630 	mov	a,#0x80
+   0588 C0 E0              1631 	push	acc
+                           1632 ;	genCall
+   058A 12s00r00           1633 	lcall	_printf
+   058D 15 81              1634 	dec	sp
+   058F 15 81              1635 	dec	sp
+   0591 15 81              1636 	dec	sp
+   0593                    1637 00125$:
+                           1638 ;	../Source/Lab3sup.c:185: if(counter_bit==1)
+                           1639 ;	genAssign
+   0593 90s00r09           1640 	mov	dptr,#_counter_bit
+   0596 E0                 1641 	movx	a,@dptr
+   0597 FA                 1642 	mov	r2,a
+   0598 A3                 1643 	inc	dptr
+   0599 E0                 1644 	movx	a,@dptr
+   059A FB                 1645 	mov	r3,a
+                           1646 ;	genCmpEq
+                           1647 ;	gencjneshort
+   059B BA 01 05           1648 	cjne	r2,#0x01,00158$
+   059E BB 00 02           1649 	cjne	r3,#0x00,00158$
+   05A1 80 03              1650 	sjmp	00159$
+   05A3                    1651 00158$:
+   05A3 02s00r99           1652 	ljmp	00131$
+   05A6                    1653 00159$:
+                           1654 ;	../Source/Lab3sup.c:186: printf("\n\n\r The counter hold a value");
+                           1655 ;	genIpush
+   05A6 74r3E              1656 	mov	a,#__str_39
+   05A8 C0 E0              1657 	push	acc
+   05AA 74s06              1658 	mov	a,#(__str_39 >> 8)
+   05AC C0 E0              1659 	push	acc
+   05AE 74 80              1660 	mov	a,#0x80
+   05B0 C0 E0              1661 	push	acc
+                           1662 ;	genCall
+   05B2 12s00r00           1663 	lcall	_printf
+   05B5 15 81              1664 	dec	sp
+   05B7 15 81              1665 	dec	sp
+   05B9 15 81              1666 	dec	sp
+                           1667 ;	../Source/Lab3sup.c:188: break;	
+   05BB 02s00r99           1668 	ljmp	00131$
+                           1669 ;	../Source/Lab3sup.c:189: default:printf("\n\n\rInvalid Input Try again.\n\n\r");
+   05BE                    1670 00128$:
+                           1671 ;	genIpush
+   05BE 74r5B              1672 	mov	a,#__str_40
+   05C0 C0 E0              1673 	push	acc
+   05C2 74s06              1674 	mov	a,#(__str_40 >> 8)
+   05C4 C0 E0              1675 	push	acc
+   05C6 74 80              1676 	mov	a,#0x80
+   05C8 C0 E0              1677 	push	acc
+                           1678 ;	genCall
+   05CA 12s00r00           1679 	lcall	_printf
+   05CD 15 81              1680 	dec	sp
+   05CF 15 81              1681 	dec	sp
+   05D1 15 81              1682 	dec	sp
+                           1683 ;	../Source/Lab3sup.c:190: }
+   05D3 02s00r99           1684 	ljmp	00131$
+                           1685 ;	Peephole 259.b	removed redundant label 00133$ and ret
+                           1686 ;
+                           1687 ;------------------------------------------------------------
+                           1688 ;Allocation info for local variables in function 'putstr'
+                           1689 ;------------------------------------------------------------
+                           1690 ;s                         Allocated with name '_putstr_s_1_1'
+                           1691 ;i                         Allocated with name '_putstr_i_1_1'
+                           1692 ;------------------------------------------------------------
+                           1693 ;	../Source/Lab3sup.c:195: int putstr (char *s)
+                           1694 ;	-----------------------------------------
+                           1695 ;	 function putstr
+                           1696 ;	-----------------------------------------
+   05D6                    1697 _putstr:
+                           1698 ;	genReceive
+   05D6 AA F0              1699 	mov	r2,b
+   05D8 AB 83              1700 	mov	r3,dph
+   05DA E5 82              1701 	mov	a,dpl
+   05DC 90s00r0D           1702 	mov	dptr,#_putstr_s_1_1
+   05DF F0                 1703 	movx	@dptr,a
+   05E0 A3                 1704 	inc	dptr
+   05E1 EB                 1705 	mov	a,r3
+   05E2 F0                 1706 	movx	@dptr,a
+   05E3 A3                 1707 	inc	dptr
+   05E4 EA                 1708 	mov	a,r2
+   05E5 F0                 1709 	movx	@dptr,a
+                           1710 ;	../Source/Lab3sup.c:198: while(*s)
+                           1711 ;	genAssign
+   05E6 90s00r0D           1712 	mov	dptr,#_putstr_s_1_1
+   05E9 E0                 1713 	movx	a,@dptr
+   05EA FA                 1714 	mov	r2,a
+   05EB A3                 1715 	inc	dptr
+   05EC E0                 1716 	movx	a,@dptr
+   05ED FB                 1717 	mov	r3,a
+   05EE A3                 1718 	inc	dptr
+   05EF E0                 1719 	movx	a,@dptr
+   05F0 FC                 1720 	mov	r4,a
+                           1721 ;	genAssign
+   05F1 7D 00              1722 	mov	r5,#0x00
+   05F3 7E 00              1723 	mov	r6,#0x00
+   05F5                    1724 00101$:
+                           1725 ;	genPointerGet
+                           1726 ;	genGenPointerGet
+   05F5 8A 82              1727 	mov	dpl,r2
+   05F7 8B 83              1728 	mov	dph,r3
+   05F9 8C F0              1729 	mov	b,r4
+   05FB 12s00r00           1730 	lcall	__gptrget
+                           1731 ;	genIfx
+   05FE FF                 1732 	mov	r7,a
+                           1733 ;	Peephole 105	removed redundant mov
+                           1734 ;	genIfxJump
+                           1735 ;	Peephole 108.c	removed ljmp by inverse jump logic
+   05FF 60 30              1736 	jz	00108$
+                           1737 ;	Peephole 300	removed redundant label 00109$
+                           1738 ;	../Source/Lab3sup.c:200: putchar(*s++);
+                           1739 ;	genAssign
+                           1740 ;	genPlus
+                           1741 ;     genPlusIncr
+   0601 0A                 1742 	inc	r2
+   0602 BA 00 01           1743 	cjne	r2,#0x00,00110$
+   0605 0B                 1744 	inc	r3
+   0606                    1745 00110$:
+                           1746 ;	genAssign
+   0606 90s00r0D           1747 	mov	dptr,#_putstr_s_1_1
+   0609 EA                 1748 	mov	a,r2
+   060A F0                 1749 	movx	@dptr,a
+   060B A3                 1750 	inc	dptr
+   060C EB                 1751 	mov	a,r3
+   060D F0                 1752 	movx	@dptr,a
+   060E A3                 1753 	inc	dptr
+   060F EC                 1754 	mov	a,r4
+   0610 F0                 1755 	movx	@dptr,a
+                           1756 ;	genCall
+   0611 8F 82              1757 	mov	dpl,r7
+   0613 C0 02              1758 	push	ar2
+   0615 C0 03              1759 	push	ar3
+   0617 C0 04              1760 	push	ar4
+   0619 C0 05              1761 	push	ar5
+   061B C0 06              1762 	push	ar6
+   061D 12s06r46           1763 	lcall	_putchar
+   0620 D0 06              1764 	pop	ar6
+   0622 D0 05              1765 	pop	ar5
+   0624 D0 04              1766 	pop	ar4
+   0626 D0 03              1767 	pop	ar3
+   0628 D0 02              1768 	pop	ar2
+                           1769 ;	../Source/Lab3sup.c:201: i++;
+                           1770 ;	genPlus
+                           1771 ;     genPlusIncr
+                           1772 ;	tail increment optimized (range 8)
+   062A 0D                 1773 	inc	r5
+   062B BD 00 C7           1774 	cjne	r5,#0x00,00101$
+   062E 0E                 1775 	inc	r6
+                           1776 ;	Peephole 112.b	changed ljmp to sjmp
+   062F 80 C4              1777 	sjmp	00101$
+   0631                    1778 00108$:
+                           1779 ;	genAssign
+   0631 90s00r0D           1780 	mov	dptr,#_putstr_s_1_1
+   0634 EA                 1781 	mov	a,r2
+   0635 F0                 1782 	movx	@dptr,a
+   0636 A3                 1783 	inc	dptr
+   0637 EB                 1784 	mov	a,r3
+   0638 F0                 1785 	movx	@dptr,a
+   0639 A3                 1786 	inc	dptr
+   063A EC                 1787 	mov	a,r4
+   063B F0                 1788 	movx	@dptr,a
+                           1789 ;	../Source/Lab3sup.c:203: return(i+1);
+                           1790 ;	genPlus
+                           1791 ;     genPlusIncr
+   063C 0D                 1792 	inc	r5
+   063D BD 00 01           1793 	cjne	r5,#0x00,00111$
+   0640 0E                 1794 	inc	r6
+   0641                    1795 00111$:
+                           1796 ;	genRet
+   0641 8D 82              1797 	mov	dpl,r5
+   0643 8E 83              1798 	mov	dph,r6
+                           1799 ;	Peephole 300	removed redundant label 00104$
+   0645 22                 1800 	ret
+                           1801 ;------------------------------------------------------------
+                           1802 ;Allocation info for local variables in function 'putchar'
+                           1803 ;------------------------------------------------------------
+                           1804 ;c                         Allocated with name '_putchar_c_1_1'
+                           1805 ;------------------------------------------------------------
+                           1806 ;	../Source/Lab3sup.c:206: void putchar(char c)
+                           1807 ;	-----------------------------------------
+                           1808 ;	 function putchar
+                           1809 ;	-----------------------------------------
+   0646                    1810 _putchar:
+                           1811 ;	genReceive
+   0646 E5 82              1812 	mov	a,dpl
+   0648 90s00r10           1813 	mov	dptr,#_putchar_c_1_1
+   064B F0                 1814 	movx	@dptr,a
+                           1815 ;	../Source/Lab3sup.c:208: while(TI == 0);
+   064C                    1816 00101$:
+                           1817 ;	genIfx
+                           1818 ;	genIfxJump
+                           1819 ;	Peephole 108.d	removed ljmp by inverse jump logic
+                           1820 ;	../Source/Lab3sup.c:209: TI = 0;
+                           1821 ;	genAssign
+                           1822 ;	Peephole 250.a	using atomic test and clear
+   064C 10 99 02           1823 	jbc	_TI,00108$
+   064F 80 FB              1824 	sjmp	00101$
+   0651                    1825 00108$:
+                           1826 ;	../Source/Lab3sup.c:210: SBUF = c;
+                           1827 ;	genAssign
+   0651 90s00r10           1828 	mov	dptr,#_putchar_c_1_1
+   0654 E0                 1829 	movx	a,@dptr
+   0655 F5 99              1830 	mov	_SBUF,a
+                           1831 ;	Peephole 300	removed redundant label 00104$
+   0657 22                 1832 	ret
+                           1833 ;------------------------------------------------------------
+                           1834 ;Allocation info for local variables in function 'getchar'
+                           1835 ;------------------------------------------------------------
+                           1836 ;------------------------------------------------------------
+                           1837 ;	../Source/Lab3sup.c:213: char getchar()
+                           1838 ;	-----------------------------------------
+                           1839 ;	 function getchar
+                           1840 ;	-----------------------------------------
+   0658                    1841 _getchar:
+                           1842 ;	../Source/Lab3sup.c:215: while(RI==0);
+   0658                    1843 00101$:
+                           1844 ;	genIfx
+                           1845 ;	genIfxJump
+                           1846 ;	Peephole 108.d	removed ljmp by inverse jump logic
+                           1847 ;	../Source/Lab3sup.c:216: RI = 0;
+                           1848 ;	genAssign
+                           1849 ;	Peephole 250.a	using atomic test and clear
+   0658 10 98 02           1850 	jbc	_RI,00108$
+   065B 80 FB              1851 	sjmp	00101$
+   065D                    1852 00108$:
+                           1853 ;	../Source/Lab3sup.c:217: return SBUF; 
+                           1854 ;	genAssign
+   065D AA 99              1855 	mov	r2,_SBUF
+                           1856 ;	genRet
+   065F 8A 82              1857 	mov	dpl,r2
+                           1858 ;	Peephole 300	removed redundant label 00104$
+   0661 22                 1859 	ret
+                           1860 ;------------------------------------------------------------
+                           1861 ;Allocation info for local variables in function 'isr_one'
+                           1862 ;------------------------------------------------------------
+                           1863 ;------------------------------------------------------------
+                           1864 ;	../Source/Lab3sup.c:222: void isr_one(void) __interrupt (1) // ISR for external INT 1
+                           1865 ;	-----------------------------------------
+                           1866 ;	 function isr_one
+                           1867 ;	-----------------------------------------
+   0662                    1868 _isr_one:
+   0662 C0 E0              1869 	push	acc
+   0664 C0 82              1870 	push	dpl
+   0666 C0 83              1871 	push	dph
+   0668 C0 02              1872 	push	ar2
+   066A C0 03              1873 	push	ar3
+   066C C0 D0              1874 	push	psw
+   066E 75 D0 00           1875 	mov	psw,#0x00
+                           1876 ;	../Source/Lab3sup.c:224: TF0=0;	
+                           1877 ;	genAssign
+   0671 C2 8D              1878 	clr	_TF0
+                           1879 ;	../Source/Lab3sup.c:225: P1_7 = !P1_7;
+                           1880 ;	genNot
+   0673 B2 97              1881 	cpl	_P1_7
+                           1882 ;	../Source/Lab3sup.c:226: timer0++;
+                           1883 ;	genAssign
+   0675 90s00r0B           1884 	mov	dptr,#_timer0
+   0678 E0                 1885 	movx	a,@dptr
+   0679 FA                 1886 	mov	r2,a
+   067A A3                 1887 	inc	dptr
+   067B E0                 1888 	movx	a,@dptr
+   067C FB                 1889 	mov	r3,a
+                           1890 ;	genPlus
+   067D 90s00r0B           1891 	mov	dptr,#_timer0
+                           1892 ;     genPlusIncr
+   0680 74 01              1893 	mov	a,#0x01
+                           1894 ;	Peephole 236.a	used r2 instead of ar2
+   0682 2A                 1895 	add	a,r2
+   0683 F0                 1896 	movx	@dptr,a
+                           1897 ;	Peephole 181	changed mov to clr
+   0684 E4                 1898 	clr	a
+                           1899 ;	Peephole 236.b	used r3 instead of ar3
+   0685 3B                 1900 	addc	a,r3
+   0686 A3                 1901 	inc	dptr
+   0687 F0                 1902 	movx	@dptr,a
+                           1903 ;	Peephole 300	removed redundant label 00101$
+   0688 D0 D0              1904 	pop	psw
+   068A D0 03              1905 	pop	ar3
+   068C D0 02              1906 	pop	ar2
+   068E D0 83              1907 	pop	dph
+   0690 D0 82              1908 	pop	dpl
+   0692 D0 E0              1909 	pop	acc
+   0694 32                 1910 	reti
+                           1911 ;	eliminated unneeded push/pop b
+                           1912 	.area CSEG    (CODE)
+                           1913 	.area CONST   (CODE)
+   0000                    1914 __str_0:
+   0000 0A                 1915 	.db 0x0A
+   0001 0A                 1916 	.db 0x0A
+   0002 0D                 1917 	.db 0x0D
+   0003 57 57 20 20 20 20  1918 	.ascii "WW      WW EEEEEEE LL       CCCCC   OOOOO  MM    MM EEEEE"
+        20 20 57 57 20 45
+        45 45 45 45 45 45
+        20 4C 4C 20 20 20
+        20 20 20 20 43 43
+        43 43 43 20 20 20
+        4F 4F 4F 4F 4F 20
+        20 4D 4D 20 20 20
+        20 4D 4D 20 45 45
+        45 45 45
+   003C 45 45              1919 	.ascii "EE"
+   003E 00                 1920 	.db 0x00
+   003F                    1921 __str_1:
+   003F 0A                 1922 	.db 0x0A
+   0040 0D                 1923 	.db 0x0D
+   0041 57 57 20 20 20 20  1924 	.ascii "WW      WW EE      LL      CC      OO   OO MMM  MMM EE    "
+        20 20 57 57 20 45
+        45 20 20 20 20 20
+        20 4C 4C 20 20 20
+        20 20 20 43 43 20
+        20 20 20 20 20 4F
+        4F 20 20 20 4F 4F
+        20 4D 4D 4D 20 20
+        4D 4D 4D 20 45 45
+        20 20 20 20
+   007B 20                 1925 	.ascii " "
+   007C 00                 1926 	.db 0x00
+   007D                    1927 __str_2:
+   007D 0A                 1928 	.db 0x0A
+   007E 0D                 1929 	.db 0x0D
+   007F 57 57 20 20 20 57  1930 	.ascii "WW   W  WW EEEEE   LL      CC      OO   OO MM MM MM EEEEE "
+        20 20 57 57 20 45
+        45 45 45 45 20 20
+        20 4C 4C 20 20 20
+        20 20 20 43 43 20
+        20 20 20 20 20 4F
+        4F 20 20 20 4F 4F
+        20 4D 4D 20 4D 4D
+        20 4D 4D 20 45 45
+        45 45 45 20
+   00B9 20                 1931 	.ascii " "
+   00BA 00                 1932 	.db 0x00
+   00BB                    1933 __str_3:
+   00BB 0A                 1934 	.db 0x0A
+   00BC 0D                 1935 	.db 0x0D
+   00BD 20 57 57 20 57 57  1936 	.ascii " WW WWW WW EE      LL      CC      OO   OO MM    MM EE    "
+        57 20 57 57 20 45
+        45 20 20 20 20 20
+        20 4C 4C 20 20 20
+        20 20 20 43 43 20
+        20 20 20 20 20 4F
+        4F 20 20 20 4F 4F
+        20 4D 4D 20 20 20
+        20 4D 4D 20 45 45
+        20 20 20 20
+   00F7 20                 1937 	.ascii " "
+   00F8 00                 1938 	.db 0x00
+   00F9                    1939 __str_4:
+   00F9 0A                 1940 	.db 0x0A
+   00FA 0D                 1941 	.db 0x0D
+   00FB 20 20 57 57 20 20  1942 	.ascii "  WW   WW  EEEEEEE LLLLLLL  CCCCC   OOOO0  MM    MM EEEEEE"
+        20 57 57 20 20 45
+        45 45 45 45 45 45
+        20 4C 4C 4C 4C 4C
+        4C 4C 20 20 43 43
+        43 43 43 20 20 20
+        4F 4F 4F 4F 30 20
+        20 4D 4D 20 20 20
+        20 4D 4D 20 45 45
+        45 45 45 45
+   0135 45                 1943 	.ascii "E"
+   0136 00                 1944 	.db 0x00
+   0137                    1945 __str_5:
+   0137 0A                 1946 	.db 0x0A
+   0138 0A                 1947 	.db 0x0A
+   0139 0D                 1948 	.db 0x0D
+   013A 50 6C 65 61 73 65  1949 	.ascii "Please make a selection:"
+        20 6D 61 6B 65 20
+        61 20 73 65 6C 65
+        63 74 69 6F 6E 3A
+   0152 00                 1950 	.db 0x00
+   0153                    1951 __str_6:
+   0153 0A                 1952 	.db 0x0A
+   0154 0D                 1953 	.db 0x0D
+   0155 2D 2D 2D 2D 2D 2D  1954 	.ascii "----------------------------------------------------------"
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D
+   018F 2D 2D 2D 2D 2D 2D  1955 	.ascii "----------------------"
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D 2D 2D
+        2D 2D 2D 2D
+   01A5 00                 1956 	.db 0x00
+   01A6                    1957 __str_7:
+   01A6 0A                 1958 	.db 0x0A
+   01A7 0A                 1959 	.db 0x0A
+   01A8 0D                 1960 	.db 0x0D
+   01A9 20 20 20 20 20 20  1961 	.ascii "                                MAIN MENU"
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 4D 41 49 4E
+        20 4D 45 4E 55
+   01D2 00                 1962 	.db 0x00
+   01D3                    1963 __str_8:
+   01D3 0A                 1964 	.db 0x0A
+   01D4 0D                 1965 	.db 0x0D
+   01D5 31 2E 43 6C 65 61  1966 	.ascii "1.Clear Counter 0 (reset counter to zero)"
+        72 20 43 6F 75 6E
+        74 65 72 20 30 20
+        28 72 65 73 65 74
+        20 63 6F 75 6E 74
+        65 72 20 74 6F 20
+        7A 65 72 6F 29
+   01FE 00                 1967 	.db 0x00
+   01FF                    1968 __str_9:
+   01FF 0A                 1969 	.db 0x0A
+   0200 0D                 1970 	.db 0x0D
+   0201 32 2E 52 75 6E 20  1971 	.ascii "2.Run Counter 0 (set TR0 bit)"
+        43 6F 75 6E 74 65
+        72 20 30 20 28 73
+        65 74 20 54 52 30
+        20 62 69 74 29
+   021E 00                 1972 	.db 0x00
+   021F                    1973 __str_10:
+   021F 0A                 1974 	.db 0x0A
+   0220 0D                 1975 	.db 0x0D
+   0221 33 2E 53 74 6F 70  1976 	.ascii "3.Stop Counter 0 (clear TR0 bit)"
+        20 43 6F 75 6E 74
+        65 72 20 30 20 28
+        63 6C 65 61 72 20
+        54 52 30 20 62 69
+        74 29
+   0241 00                 1977 	.db 0x00
+   0242                    1978 __str_11:
+   0242 0A                 1979 	.db 0x0A
+   0243 0D                 1980 	.db 0x0D
+   0244 34 2E 52 75 6E 20  1981 	.ascii "4.Run PWM (turn on both PWM outputs)"
+        50 57 4D 20 28 74
+        75 72 6E 20 6F 6E
+        20 62 6F 74 68 20
+        50 57 4D 20 6F 75
+        74 70 75 74 73 29
+   0268 00                 1982 	.db 0x00
+   0269                    1983 __str_12:
+   0269 0A                 1984 	.db 0x0A
+   026A 0D                 1985 	.db 0x0D
+   026B 35 2E 53 74 6F 70  1986 	.ascii "5.Stop PWM (turn off both PWM outputs)"
+        20 50 57 4D 20 28
+        74 75 72 6E 20 6F
+        66 66 20 62 6F 74
+        68 20 50 57 4D 20
+        6F 75 74 70 75 74
+        73 29
+   0291 00                 1987 	.db 0x00
+   0292                    1988 __str_13:
+   0292 0A                 1989 	.db 0x0A
+   0293 0D                 1990 	.db 0x0D
+   0294 36 2E 52 65 61 64  1991 	.ascii "6.Read Counter 0 and print out current value (verifiable n"
+        20 43 6F 75 6E 74
+        65 72 20 30 20 61
+        6E 64 20 70 72 69
+        6E 74 20 6F 75 74
+        20 63 75 72 72 65
+        6E 74 20 76 61 6C
+        75 65 20 28 76 65
+        72 69 66 69 61 62
+        6C 65 20 6E
+   02CE 75 6D 62 65 72 73  1992 	.ascii "umbers) to the serial port"
+        29 20 74 6F 20 74
+        68 65 20 73 65 72
+        69 61 6C 20 70 6F
+        72 74
+   02E8 00                 1993 	.db 0x00
+   02E9                    1994 __str_14:
+   02E9 0A                 1995 	.db 0x0A
+   02EA 0D                 1996 	.db 0x0D
+   02EB 37 2E 45 6E 74 65  1997 	.ascii "7.Enter Idle mode (set IDLE bit in PCON register)"
+        72 20 49 64 6C 65
+        20 6D 6F 64 65 20
+        28 73 65 74 20 49
+        44 4C 45 20 62 69
+        74 20 69 6E 20 50
+        43 4F 4E 20 72 65
+        67 69 73 74 65 72
+        29
+   031C 00                 1998 	.db 0x00
+   031D                    1999 __str_15:
+   031D 0A                 2000 	.db 0x0A
+   031E 0D                 2001 	.db 0x0D
+   031F 38 2E 45 6E 74 65  2002 	.ascii "8.Enter Power Down mode (set PDE bit in PCON register)"
+        72 20 50 6F 77 65
+        72 20 44 6F 77 6E
+        20 6D 6F 64 65 20
+        28 73 65 74 20 50
+        44 45 20 62 69 74
+        20 69 6E 20 50 43
+        4F 4E 20 72 65 67
+        69 73 74 65 72 29
+   0355 00                 2003 	.db 0x00
+   0356                    2004 __str_16:
+   0356 0A                 2005 	.db 0x0A
+   0357 0D                 2006 	.db 0x0D
+   0358 39 2E 54 6F 20 63  2007 	.ascii "9.To check Status of the system"
+        68 65 63 6B 20 53
+        74 61 74 75 73 20
+        6F 66 20 74 68 65
+        20 73 79 73 74 65
+        6D
+   0377 00                 2008 	.db 0x00
+   0378                    2009 __str_17:
+   0378 0A                 2010 	.db 0x0A
+   0379 0D                 2011 	.db 0x0D
+   037A 28 31 2D 39 29 3A  2012 	.ascii "(1-9):"
+   0380 00                 2013 	.db 0x00
+   0381                    2014 __str_18:
+   0381 0A                 2015 	.db 0x0A
+   0382 0A                 2016 	.db 0x0A
+   0383 0D                 2017 	.db 0x0D
+   0384 43 6F 75 6E 74 65  2018 	.ascii "Counter0 has been cleared"
+        72 30 20 68 61 73
+        20 62 65 65 6E 20
+        63 6C 65 61 72 65
+        64
+   039D 0A                 2019 	.db 0x0A
+   039E 0A                 2020 	.db 0x0A
+   039F 0D                 2021 	.db 0x0D
+   03A0 00                 2022 	.db 0x00
+   03A1                    2023 __str_19:
+   03A1 0A                 2024 	.db 0x0A
+   03A2 0A                 2025 	.db 0x0A
+   03A3 0D                 2026 	.db 0x0D
+   03A4 50 72 65 73 73 20  2027 	.ascii "Press any key to go back to the main menu ..."
+        61 6E 79 20 6B 65
+        79 20 74 6F 20 67
+        6F 20 62 61 63 6B
+        20 74 6F 20 74 68
+        65 20 6D 61 69 6E
+        20 6D 65 6E 75 20
+        2E 2E 2E
+   03D1 00                 2028 	.db 0x00
+   03D2                    2029 __str_20:
+   03D2 0A                 2030 	.db 0x0A
+   03D3 0A                 2031 	.db 0x0A
+   03D4 0D                 2032 	.db 0x0D
+   03D5 43 6F 75 6E 74 65  2033 	.ascii "Counter0 RUNNING!"
+        72 30 20 52 55 4E
+        4E 49 4E 47 21
+   03E6 0A                 2034 	.db 0x0A
+   03E7 0A                 2035 	.db 0x0A
+   03E8 0D                 2036 	.db 0x0D
+   03E9 00                 2037 	.db 0x00
+   03EA                    2038 __str_21:
+   03EA 0A                 2039 	.db 0x0A
+   03EB 0A                 2040 	.db 0x0A
+   03EC 0D                 2041 	.db 0x0D
+   03ED 43 6F 75 6E 74 65  2042 	.ascii "Counter0 is already operational"
+        72 30 20 69 73 20
+        61 6C 72 65 61 64
+        79 20 6F 70 65 72
+        61 74 69 6F 6E 61
+        6C
+   040C 00                 2043 	.db 0x00
+   040D                    2044 __str_22:
+   040D 0A                 2045 	.db 0x0A
+   040E 0A                 2046 	.db 0x0A
+   040F 0D                 2047 	.db 0x0D
+   0410 43 6F 75 6E 74 65  2048 	.ascii "Counter0 STOPPED!"
+        72 30 20 53 54 4F
+        50 50 45 44 21
+   0421 0A                 2049 	.db 0x0A
+   0422 0A                 2050 	.db 0x0A
+   0423 0D                 2051 	.db 0x0D
+   0424 00                 2052 	.db 0x00
+   0425                    2053 __str_23:
+   0425 0A                 2054 	.db 0x0A
+   0426 0A                 2055 	.db 0x0A
+   0427 0D                 2056 	.db 0x0D
+   0428 43 6F 75 6E 74 65  2057 	.ascii "Counter0 is not operational. Hence Cannot be stopped"
+        72 30 20 69 73 20
+        6E 6F 74 20 6F 70
+        65 72 61 74 69 6F
+        6E 61 6C 2E 20 48
+        65 6E 63 65 20 43
+        61 6E 6E 6F 74 20
+        62 65 20 73 74 6F
+        70 70 65 64
+   045C 00                 2058 	.db 0x00
+   045D                    2059 __str_24:
+   045D 0A                 2060 	.db 0x0A
+   045E 0A                 2061 	.db 0x0A
+   045F 0D                 2062 	.db 0x0D
+   0460 50 57 4D 20 6F 75  2063 	.ascii "PWM outputs initiated"
+        74 70 75 74 73 20
+        69 6E 69 74 69 61
+        74 65 64
+   0475 0A                 2064 	.db 0x0A
+   0476 0A                 2065 	.db 0x0A
+   0477 0D                 2066 	.db 0x0D
+   0478 00                 2067 	.db 0x00
+   0479                    2068 __str_25:
+   0479 0A                 2069 	.db 0x0A
+   047A 0D                 2070 	.db 0x0D
+   047B 20 50 57 4D 20 20  2071 	.ascii " PWM  ON "
+        4F 4E 20
+   0484 0A                 2072 	.db 0x0A
+   0485 0A                 2073 	.db 0x0A
+   0486 0D                 2074 	.db 0x0D
+   0487 20 20 50 31 2E 33  2075 	.ascii "  P1.3 D=5% P1.4 D=60% "
+        20 44 3D 35 25 20
+        50 31 2E 34 20 44
+        3D 36 30 25 20
+   049E 0A                 2076 	.db 0x0A
+   049F 0D                 2077 	.db 0x0D
+   04A0 00                 2078 	.db 0x00
+   04A1                    2079 __str_26:
+   04A1 0A                 2080 	.db 0x0A
+   04A2 0A                 2081 	.db 0x0A
+   04A3 0D                 2082 	.db 0x0D
+   04A4 50 57 4D 20 6F 75  2083 	.ascii "PWM outputs are already rolling "
+        74 70 75 74 73 20
+        61 72 65 20 61 6C
+        72 65 61 64 79 20
+        72 6F 6C 6C 69 6E
+        67 20
+   04C4 00                 2084 	.db 0x00
+   04C5                    2085 __str_27:
+   04C5 0A                 2086 	.db 0x0A
+   04C6 0A                 2087 	.db 0x0A
+   04C7 0D                 2088 	.db 0x0D
+   04C8 50 57 4D 20 6F 75  2089 	.ascii "PWM outputs ended"
+        74 70 75 74 73 20
+        65 6E 64 65 64
+   04D9 0A                 2090 	.db 0x0A
+   04DA 0A                 2091 	.db 0x0A
+   04DB 0D                 2092 	.db 0x0D
+   04DC 00                 2093 	.db 0x00
+   04DD                    2094 __str_28:
+   04DD 50 57 4D 20 6F 75  2095 	.ascii "PWM outputs are not operational. Hence cannot be stopped"
+        74 70 75 74 73 20
+        61 72 65 20 6E 6F
+        74 20 6F 70 65 72
+        61 74 69 6F 6E 61
+        6C 2E 20 48 65 6E
+        63 65 20 63 61 6E
+        6E 6F 74 20 62 65
+        20 73 74 6F 70 70
+        65 64
+   0515 00                 2096 	.db 0x00
+   0516                    2097 __str_29:
+   0516 0A                 2098 	.db 0x0A
+   0517 0A                 2099 	.db 0x0A
+   0518 0D                 2100 	.db 0x0D
+   0519 54 68 65 20 63 6F  2101 	.ascii "The counter output is %d "
+        75 6E 74 65 72 20
+        6F 75 74 70 75 74
+        20 69 73 20 25 64
+        20
+   0532 0A                 2102 	.db 0x0A
+   0533 0A                 2103 	.db 0x0A
+   0534 0D                 2104 	.db 0x0D
+   0535 00                 2105 	.db 0x00
+   0536                    2106 __str_30:
+   0536 0A                 2107 	.db 0x0A
+   0537 0A                 2108 	.db 0x0A
+   0538 0D                 2109 	.db 0x0D
+   0539 50 72 6F 63 65 73  2110 	.ascii "Processor in Idle mode"
+        73 6F 72 20 69 6E
+        20 49 64 6C 65 20
+        6D 6F 64 65
+   054F 0A                 2111 	.db 0x0A
+   0550 0A                 2112 	.db 0x0A
+   0551 0D                 2113 	.db 0x0D
+   0552 00                 2114 	.db 0x00
+   0553                    2115 __str_31:
+   0553 0A                 2116 	.db 0x0A
+   0554 0A                 2117 	.db 0x0A
+   0555 0D                 2118 	.db 0x0D
+   0556 53 75 63 63 65 73  2119 	.ascii "Successfully EXITED idle mode "
+        73 66 75 6C 6C 79
+        20 45 58 49 54 45
+        44 20 69 64 6C 65
+        20 6D 6F 64 65 20
+   0574 0A                 2120 	.db 0x0A
+   0575 0A                 2121 	.db 0x0A
+   0576 0D                 2122 	.db 0x0D
+   0577 00                 2123 	.db 0x00
+   0578                    2124 __str_32:
+   0578 0A                 2125 	.db 0x0A
+   0579 0A                 2126 	.db 0x0A
+   057A 0D                 2127 	.db 0x0D
+   057B 50 72 6F 63 65 73  2128 	.ascii "Processor in Power Down Mode"
+        73 6F 72 20 69 6E
+        20 50 6F 77 65 72
+        20 44 6F 77 6E 20
+        4D 6F 64 65
+   0597 0A                 2129 	.db 0x0A
+   0598 0A                 2130 	.db 0x0A
+   0599 0D                 2131 	.db 0x0D
+   059A 00                 2132 	.db 0x00
+   059B                    2133 __str_33:
+   059B 0A                 2134 	.db 0x0A
+   059C 0A                 2135 	.db 0x0A
+   059D 0D                 2136 	.db 0x0D
+   059E 45 6E 74 65 72 69  2137 	.ascii "Entering power down mode"
+        6E 67 20 70 6F 77
+        65 72 20 64 6F 77
+        6E 20 6D 6F 64 65
+   05B6 0A                 2138 	.db 0x0A
+   05B7 0D                 2139 	.db 0x0D
+   05B8 00                 2140 	.db 0x00
+   05B9                    2141 __str_34:
+   05B9 0A                 2142 	.db 0x0A
+   05BA 0A                 2143 	.db 0x0A
+   05BB 0D                 2144 	.db 0x0D
+   05BC 00                 2145 	.db 0x00
+   05BD                    2146 __str_35:
+   05BD 0A                 2147 	.db 0x0A
+   05BE 0A                 2148 	.db 0x0A
+   05BF 0D                 2149 	.db 0x0D
+   05C0 45 78 69 74 65 64  2150 	.ascii "Exited power down mode "
+        20 70 6F 77 65 72
+        20 64 6F 77 6E 20
+        6D 6F 64 65 20
+   05D7 0A                 2151 	.db 0x0A
+   05D8 0D                 2152 	.db 0x0D
+   05D9 00                 2153 	.db 0x00
+   05DA                    2154 __str_36:
+   05DA 54 68 65 20 73 74  2155 	.ascii "The staus for the system is as follows"
+        61 75 73 20 66 6F
+        72 20 74 68 65 20
+        73 79 73 74 65 6D
+        20 69 73 20 61 73
+        20 66 6F 6C 6C 6F
+        77 73
+   0600 00                 2156 	.db 0x00
+   0601                    2157 __str_37:
+   0601 0A                 2158 	.db 0x0A
+   0602 0A                 2159 	.db 0x0A
+   0603 0D                 2160 	.db 0x0D
+   0604 20 54 68 65 20 43  2161 	.ascii " The Counter0 is running "
+        6F 75 6E 74 65 72
+        30 20 69 73 20 72
+        75 6E 6E 69 6E 67
+        20
+   061D 00                 2162 	.db 0x00
+   061E                    2163 __str_38:
+   061E 0A                 2164 	.db 0x0A
+   061F 0A                 2165 	.db 0x0A
+   0620 0D                 2166 	.db 0x0D
+   0621 20 54 68 65 20 50  2167 	.ascii " The PWM outputs are running"
+        57 4D 20 6F 75 74
+        70 75 74 73 20 61
+        72 65 20 72 75 6E
+        6E 69 6E 67
+   063D 00                 2168 	.db 0x00
+   063E                    2169 __str_39:
+   063E 0A                 2170 	.db 0x0A
+   063F 0A                 2171 	.db 0x0A
+   0640 0D                 2172 	.db 0x0D
+   0641 20 54 68 65 20 63  2173 	.ascii " The counter hold a value"
+        6F 75 6E 74 65 72
+        20 68 6F 6C 64 20
+        61 20 76 61 6C 75
+        65
+   065A 00                 2174 	.db 0x00
+   065B                    2175 __str_40:
+   065B 0A                 2176 	.db 0x0A
+   065C 0A                 2177 	.db 0x0A
+   065D 0D                 2178 	.db 0x0D
+   065E 49 6E 76 61 6C 69  2179 	.ascii "Invalid Input Try again."
+        64 20 49 6E 70 75
+        74 20 54 72 79 20
+        61 67 61 69 6E 2E
+   0676 0A                 2180 	.db 0x0A
+   0677 0A                 2181 	.db 0x0A
+   0678 0D                 2182 	.db 0x0D
+   0679 00                 2183 	.db 0x00
+                           2184 	.area XINIT   (CODE)

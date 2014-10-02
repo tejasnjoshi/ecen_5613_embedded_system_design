@@ -1,0 +1,23 @@
+#WAVEFORM
+#H Name     LAB4;
+#H PartNo   001;
+#H Date     3/25/2013;
+#H Revision 01;
+#H Designer Engineer;
+#H Company  University Of Colorado Boulder;
+#H Assembly None;
+#H Location None;
+#H Device   g16v8a;
+#H 
+#H 
+#H ORDER: A12, A13, A14, A15, RD_AL, WR_AL, PSEN_AL, E, CLK; 
+#H 
+#H 
+#V 0001 0000000LL
+#V 0002 1111000HL
+#V 0003 0000100LL
+#V 0004 1111101HL
+#V 0005 0000011LH
+#V 0006 1111011HL
+#V 0007 0000110LH
+#V 0008 1111110LL

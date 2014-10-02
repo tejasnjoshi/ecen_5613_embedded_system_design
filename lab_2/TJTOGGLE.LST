@@ -1,0 +1,26 @@
+DUNFIELD 8051 ASSEMBLER: TJTOGGLE                                     PAGE: 1
+
+0000                         1  	ORG	$0000
+0000  01 52                  2  	AJMP	MAIN			; Jump to 0050h to avoid overwriting ISR
+0002                         3  
+0050                         4  	ORG	$0050
+0050  78 04                  5  	MOV	R0,#04H			; Load Counter with loop count 4
+0052  75 89 01               6  MAIN	MOV	TMOD,#001H		; Set Timer to MODE 1(16 Bit Timer)
+0055  75 8C 4B               7  LOOP	MOV	TH0,#04BH		; Set Timer initial value		Calculation:	50ms/1.081572us =46229 
+0058  75 8A 6A               8  	MOV	TL0,#06AH		; Set Timer Low initial Value		65536-46229=(19306)d =(4B6A)h	
+005B  75 A8 82               9  	MOV	IE,#082H		; Enable Interrupts
+005E  D2 8C                 10  	SETB	TCON.4			; Start the timer
+0060  30 8D FD              11  	JNB	TCON.5,$		; Loope here till TF0 flag is set
+0063  80 F0                 12  	SJMP	LOOP			; Infinite Loop
+0065                        13  
+0065                        14  
+000B                        15  	ORG	$000B	
+000B  B2 90                 16  ISR	CPL 	P1.0			; ISR starts here with toggling port pin 1.0 indicating ISR start
+000D  75 A8 00              17  	MOV	IE,#00H			; Disable Interrupts
+0010  75 88 00              18  	MOV	TCON,#00H		; Stop all timers 
+0013  D8 06                 19  	DJNZ 	R0,D1			; Check if loop count is 0 or return back
+0015  78 04                 20  	MOV	R0,#04H			; Reload loop counter if it reaches zero
+0017  B2 97                 21  	CPL	P1.7			; Toggle port pin 1.7 which drives the LED (200ms On 200ms Off)
+0019  B2 90                 22  	CPL	P1.0			; toggle P1.0 indicating ISR has stopped
+001B  32                    23  D1	RETI				; Return from ISR
+001C                        24  	

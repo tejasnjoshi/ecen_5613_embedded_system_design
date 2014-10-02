@@ -1,0 +1,29 @@
+Name     LLL1 ;
+PartNo   21 ;
+Date     1/26/2013 ;
+Revision 01 ;
+Designer Engineer ;
+Company  UCB ;
+Assembly None ;
+Location LAB ;
+Device   g16v8a ;
+
+/* *************** INPUT PINS *********************/
+PIN  2   =    A12                     ; /*    Assign Pin2 as input A12                             */ 
+PIN  3   =    A13                     ; /*    Assign Pin3 as input A13                             */ 
+PIN  4	  =    WR_AL   		     ; /*    Pin4 not being used for PD signal reservation */ 
+PIN  5   =    A14                     ; /*    Assign Pin5 as input A14                            */ 
+PIN  6   =    A15                     ; /*    Assign Pin6 as input A15                             */ 
+PIN  7   =    RD_AL                  ; /*     Read(Bar)  AL=Active Low                            */ 
+PIN  8   =    PSEN_AL                ; /*     PSEN(Bar)  AL=Active Low                            */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN  12  =   READ_AL                      ; /* Assign Pin12 as output READ(Bar) AL=Active Low            */ 
+PIN  13  =   CSPERIPH_AL                  ; /* Assign Pin19 as input CSPERIPH(Bar)   AL=Active Low       */
+PIN  14  =   CLK;
+
+READ_AL = RD_AL & PSEN_AL;
+CSPERIPH_AL = !(A12 & A13 & A14 & A15);
+CLK = (WR_AL) & (!A15);
+ 
+

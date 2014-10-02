@@ -1,0 +1,22 @@
+%SIGNAL
+PIN   2 =  A12 
+PIN   3 =  A13 
+PIN   5 =  A14 
+PIN   6 =  A15 
+PIN  13 =  CSPERIPH_AL 
+PIN   8 =  PSEN_AL 
+PIN   7 =  RD_AL 
+PIN  12 =  READ_AL 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+CSPERIPH_AL =>
+    A12 & A13 & A14 & A15
+
+READ_AL =>
+    PSEN_AL & RD_AL
+
+%END

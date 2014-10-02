@@ -1,0 +1,60 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\esdlib.olb"
+      (Type "Schematic Library"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\esdlib.olb")
+      (Select "Design Resources" ".\esdlib.olb" "Voltage  Regulator"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 205 24 445"))
+      (Tab 0)))
+  (PartMRUSelector
+    (2N2222
+      (FullPartName "2N2222.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    ("Resistor SIP"
+      (FullPartName "Resistor SIP.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    ("RESISTOR DIP 10"
+      (FullPartName "RESISTOR DIP 10.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("RESISTOR 8PACK"
+      (FullPartName "RESISTOR 8PACK.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (LED
+      (FullPartName "LED.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (DIODE
+      (FullPartName "DIODE.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("SPDT Switch"
+      (FullPartName "SPDT Switch.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    ("SPPB Switch"
+      (FullPartName "SPPB Switch.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))
+    ("Pushbutton Switch, Momentary"
+      (FullPartName "Pushbutton Switch, Momentary.Normal")
+      (LibraryName "Z:\NWANUA\ESD\ESDLIB.OLB")
+      (DeviceIndex "0"))))

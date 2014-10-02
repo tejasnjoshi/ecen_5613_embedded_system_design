@@ -1,0 +1,20 @@
+DUNFIELD 8051 ASSEMBLER: TJLAB                                        PAGE: 1
+
+0000                         1  	ORG	$0000		; origin Set to 0000h
+0000  90 01 00               2  	MOV	DPTR,#0100H 	; initialize datapointer to 0100H
+0003  78 0A                  3  	MOV 	R0,#0AH	     	; initialize the loop counter with 10
+0005  79 00                  4  	MOV	R1,#00H		; initialize actual loop excution count register
+0007  FA                     5  LOOP	MOV	R2,A		; store value of accumilator in R2
+0008  94 50                  6  	SUBB	A,#50H		; subtract 50H form Accumilator
+000A  60 0C                  7  	JZ	END		; Jump if accumilator was set to 50H to END
+000C  EA                     8  	MOV	A,R2		; Copy back contents of accumilator
+000D  94 50                  9  	SUBB	A,#50H		; subtract 50H form Accumilator
+000F  50 07                 10  	JNC	END		; Jump if accumilator contents are more than 50H END
+0011  EA                    11  	MOV	A,R2		; Replace contents of accumilator from Reg R2
+0012  F0                    12  	MOVX	[DPTR],A	; Store contents of Accumilator to External Data Memory
+0013  04                    13  	INC	A		; Increment A	
+0014  A3                    14  	INC	DPTR		; Increment DPTR
+0015  09                    15  	INC	R1		; Increment Loop Counter
+0016  D8 EF                 16  	DJNz 	R0,LOOP		; Decrement Loop Counter
+0018  89 20                 17  END	MOV	20H,R1		; Store actual loop Count to IRAM	
+001A  A5                    18  	DB	$A5		; Stop using Illegal instuction

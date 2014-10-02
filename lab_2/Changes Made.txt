@@ -1,0 +1,11 @@
+I have added the coupling capacitors in the schematic and connected PSEN directly to the NVRM
+for read operations.
+
+
+
+
+
+
+
+
+

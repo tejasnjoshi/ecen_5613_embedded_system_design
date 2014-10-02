@@ -1,0 +1,39 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# 
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Mon Mar 25 05:04:50 2013
+
+LISTING FOR SIMULATION FILE: LAB4.si
+
+   1: Name     LAB4;
+   2: PartNo   001;
+   3: Date     3/25/2013;
+   4: Revision 01;
+   5: Designer Engineer;
+   6: Company  University Of Colorado Boulder;
+   7: Assembly None;
+   8: Location None;
+   9: Device   g16v8a;
+  10: 
+  11: 
+  12: ORDER: A12, A13, A14, A15, RD_AL, WR_AL, PSEN_AL, E, CLK; 
+  13: 
+  14: 
+
+==================
+            P     
+            S     
+          RWE     
+          DRN     
+      AAAA___ C   
+      1111AAA L   
+      2345LLLEK   
+==================
+0001: 0000000LL
+0002: 1111000HL
+0003: 0000100LL
+0004: 1111101HL
+0005: 0000011LH
+0006: 1111011HL
+0007: 0000110LH
+0008: 1111110LL

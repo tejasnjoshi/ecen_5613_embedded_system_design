@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 3.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="Lab3Sup.cdt.managedbuild.target.sdcc.exe.871252592" name="MCS51 family (SDCC)" projectType="cdt.managedbuild.target.sdcc.exe">
+<configuration artifactExtension="hex" artifactName="Lab3Sup" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.sdcc.exe.release.2133451739" name="Release" parent="cdt.managedbuild.config.sdcc.exe.release">
+<toolChain id="cdt.managedbuild.toolchain.sdcc.exe.release.752704844" name="SDCC Tool Chain" superClass="cdt.managedbuild.toolchain.sdcc.exe.release">
+<tool command="sdcc -c -mmcs51 --std-sdcc99 --verbose --model-large" id="cdt.managedbuild.tool.sdcc.c.compiler.exe.release.1752032591" name="SDCC Compiler" superClass="cdt.managedbuild.tool.sdcc.c.compiler.exe.release">
+<option id="sdcc.c.compiler.category.other.memorymodel.1085972344" superClass="sdcc.c.compiler.category.other.memorymodel" value="sdcc.c.compiler.category.other.memorymodel.large" valueType="enumerated"/>
+</tool>
+<tool command="sdcc --code-loc 0x2000 --code-size 0x8000 --xram-loc 0x0000 --xram-size 0x8000 --model-large --out-fmt-ihx" id="cdt.managedbuild.tool.sdcc.c.linker.exe.release.1764816153" name="SDCC Linker" superClass="cdt.managedbuild.tool.sdcc.c.linker.exe.release"/>
+<tool id="cdt.managedbuild.tool.sdcc.assembler.exe.release.95969075" name="SDCC Assembler" superClass="cdt.managedbuild.tool.sdcc.assembler.exe.release"/>
+<macros/>
+</toolChain>
+</configuration>
+<configuration artifactExtension="hex" artifactName="Lab3Sup" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.sdcc.exe.debug.432921293" name="Debug" parent="cdt.managedbuild.config.sdcc.exe.debug">
+<toolChain id="cdt.managedbuild.toolchain.sdcc.exe.debug.1494566955" name="SDCC Tool Chain" superClass="cdt.managedbuild.toolchain.sdcc.exe.debug">
+<tool id="cdt.managedbuild.tool.sdcc.c.compiler.exe.debug.68491529" name="SDCC Compiler" superClass="cdt.managedbuild.tool.sdcc.c.compiler.exe.debug"/>
+<tool id="cdt.managedbuild.tool.sdcc.c.linker.exe.debug.2004075954" name="SDCC Linker" superClass="cdt.managedbuild.tool.sdcc.c.linker.exe.debug"/>
+<tool id="cdt.managedbuild.tool.sdcc.assembler.exe.release.506974363" name="SDCC Assembler" superClass="cdt.managedbuild.tool.sdcc.assembler.exe.release"/>
+</toolChain>
+</configuration>
+</project>
+</ManagedProjectBuildInfo>
